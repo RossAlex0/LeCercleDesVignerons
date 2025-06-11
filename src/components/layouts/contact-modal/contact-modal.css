@@ -1,0 +1,19 @@
+.contact_container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.647);
+  padding: 2rem;
+  width: 100lvw;
+  height: 100lvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.contact_block {
+  width: 30%;
+  height: 60%;
+  border-radius: 24px;
+  background-color: var(--black-color);
+}

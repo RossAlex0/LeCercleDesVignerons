@@ -1,0 +1,12 @@
+.motion_button {
+  padding: 0.7rem 2rem;
+  background-color: var(--or-color);
+  color: var(--white-color);
+  border: none;
+  font-family: var(--font-noto);
+  font-size: 0.95rem;
+  border-radius: 40px;
+  cursor: pointer;
+  position: "relative";
+  overflow: "hidden";
+}

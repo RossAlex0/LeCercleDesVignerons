@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Prata";
+  src: url("/fonts/Prata-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/NotoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/NotoSans-Bold.ttf") format("truetype");
+  font-weight: Bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background-color: var(--black-color);
+}
+body {
+  height: 100lvh;
+  width: 100lvw;
+  background-image: url(/images/background_home.webp);
+  background-size: 110%;
+}
+main {
+  height: 100lvh;
+  width: 100%;
+}
+:root {
+  --primary-color: #2b090b;
+  --black-color: #121111;
+  --white-color: #f5f5f5;
+  --or-color: #b6935e;
+  --font-prata: "Prata", serif;
+  --font-noto: "Noto Sans", sans-serif;
+}

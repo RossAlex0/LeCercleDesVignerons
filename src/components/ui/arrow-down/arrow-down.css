@@ -1,0 +1,12 @@
+.arrow_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.arrow_button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
