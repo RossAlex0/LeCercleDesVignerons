@@ -1,11 +1,13 @@
 header {
   width: 100%;
+  max-height: 8rem;
   position: fixed;
   padding: 4rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  z-index: 800;
 }
 
 .header_logo_container {
