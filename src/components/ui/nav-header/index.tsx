@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import "./nav-header.css";
+import { scrollToElementById } from "@/utils/scroll-utils";
+import { TabProps } from "./type";
 
 export default function NavHeader() {
   const [position, setPosition] = useState({
@@ -17,28 +19,27 @@ export default function NavHeader() {
       className="nav_ul"
       onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
     >
-      <Tab setPosition={setPosition}>Acceuil</Tab>
-      <Tab setPosition={setPosition}>Vins</Tab>
-      <Tab setPosition={setPosition}>À Propos</Tab>
-      <Tab setPosition={setPosition}>Contact</Tab>
+      <Tab setPosition={setPosition} refId="acceuil">
+        Acceuil
+      </Tab>
+      <Tab setPosition={setPosition} refId="wine_section">
+        Vins
+      </Tab>
+      <Tab setPosition={setPosition} refId="wine_section">
+        À Propos
+      </Tab>
+      <Tab setPosition={setPosition} refId="wine_section">
+        Contact
+      </Tab>
 
       <Cursor position={position} />
     </ul>
   );
 }
 
-const Tab = ({
-  children,
-  setPosition,
-}: {
-  children: React.ReactNode;
-  setPosition: (state: {
-    left: number;
-    width: number;
-    opacity: number;
-  }) => void;
-}) => {
+const Tab = ({ children, setPosition, refId }: TabProps) => {
   const ref = useRef<HTMLLIElement>(null);
+
   return (
     <li
       ref={ref}
@@ -52,6 +53,7 @@ const Tab = ({
           left: ref.current.offsetLeft,
         });
       }}
+      onClick={() => scrollToElementById(refId)}
       className="nav_li"
     >
       {children}
