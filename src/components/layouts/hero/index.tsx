@@ -12,7 +12,7 @@ export default function Hero() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <section className="home">
+    <section className="home" id="acceuil">
       <div className="home_container">
         <Image
           src="/logo/simple_white_logo.svg"
