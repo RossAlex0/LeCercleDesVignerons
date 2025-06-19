@@ -1,0 +1,109 @@
+.card_container {
+  height: 80lvh;
+  width: calc(50% - 2rem);
+  background: var(--black-color);
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.card_header {
+  height: 70%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid #27272a;
+}
+
+.card_image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.card_header_title {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 1rem 2rem;
+}
+
+.card_header_title h2 {
+  font-family: var(--font-noto);
+  color: rgba(255, 255, 255, 0.821);
+  margin-bottom: 0.3em;
+}
+
+.card_header_title p {
+  font-family: var(--font-noto);
+  color: rgba(255, 255, 255, 0.617);
+}
+
+.card_header_overlay {
+  position: absolute;
+  pointer-events: none;
+  inset: 0;
+  background: linear-gradient(to top, rgba(24, 24, 27, 0.8), transparent);
+}
+
+.card_footer {
+  height: 30%;
+  width: 100%;
+}
+
+.card_appellations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 2rem;
+  gap: 0.7em;
+}
+
+.card_appellations h4 {
+  font-family: var(--font-noto);
+  color: rgba(255, 255, 255, 0.696);
+  text-transform: uppercase;
+}
+
+.appellation_text {
+  display: flex;
+  flex-direction: row;
+  color: rgba(255, 255, 255, 0.617);
+  font-family: var(--font-noto);
+}
+
+.card_footer_text {
+  margin-inline: auto;
+}
+
+.card_footer_separator {
+  height: 1px;
+  width: 80%;
+  margin-inline: auto;
+  background-color: #27272a;
+  margin-block: 0.5em;
+}
+
+.card_varieties {
+  flex: 1;
+  display: flex;
+  padding: 1rem 2rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_varieties p {
+  font-family: var(--font-prata);
+  padding: 0.25rem 0.5rem 0.15rem 0.5rem;
+  margin-inline: 0.25em;
+  background-color: rgba(39, 39, 42, 0.5);
+  color: rgb(161, 161, 170);
+  border-radius: 9999px;
+}

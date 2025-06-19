@@ -1,0 +1,10 @@
+.product_container {
+  min-height: 100lvh;
+  width: 100%;
+  padding: 15lvh 5lvh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
