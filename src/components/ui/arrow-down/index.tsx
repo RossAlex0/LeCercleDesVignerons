@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import "./arrow-down.css";
+import { scrollToElementById } from "@/utils/scroll-utils";
 
 export default function ArrowDown() {
   return (
@@ -14,7 +15,11 @@ export default function ArrowDown() {
       }}
       className="arrow_container"
     >
-      <motion.button type="button" className="arrow_button">
+      <motion.button
+        type="button"
+        className="arrow_button"
+        onClick={() => scrollToElementById("wine_section")}
+      >
         <Image
           src="/logo/arrow-down.svg"
           alt="arrow down"
