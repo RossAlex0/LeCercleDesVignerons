@@ -1,21 +1,22 @@
 import { Wine } from "lucide-react";
 import { motion } from "framer-motion";
 import type { WineDomain } from "@/utils/data/regionData";
+import React from "react";
 
 import "./card.css";
-import React from "react";
 
 interface WineDomainCardProps {
   domain: WineDomain;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
-export default function WineCard({ domain }: WineDomainCardProps) {
+export default function WineCard({ domain, onClick }: WineDomainCardProps) {
   return (
     <motion.div
       className="card_container"
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
+      onClick={onClick}
     >
       <div className="card_header">
         <motion.img

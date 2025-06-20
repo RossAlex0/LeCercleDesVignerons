@@ -1,7 +1,8 @@
-import { X, Wine, MapPin, Calendar } from "lucide-react";
+import { X, MapPin, Thermometer, Amphora, MountainSnow } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { WineDomain } from "@/utils/data/regionData";
 import "./wine-modal.css";
+import Button from "@/components/ui/button";
 
 interface WineDomainModalProps {
   domain: WineDomain;
@@ -37,12 +38,13 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
             <div className="wine_modal_content">
               <div className="wine_modal_header">
                 <div className="wine_modal_title">
-                  <Wine className="wine_modal_icon" />
                   <div>
                     <h2 className="wine_modal_name">{domain.name}</h2>
                     <div className="wine_modal_region">
                       <MapPin className="wine_modal_icon" />
-                      <span>{domain.region}</span>
+                      <p className="wine_modal_position">
+                        {domain.country_position}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -56,40 +58,44 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
               <div className="wine_modal_stats">
                 <div>
                   <div className="wine_modal_label">
-                    <Calendar className="wine_modal_icon" />
-                    <span>Établi en</span>
+                    <Thermometer
+                      className="wine_modal_icon"
+                      style={{ marginLeft: "-6px" }}
+                    />
+                    <span>Climat</span>
                   </div>
-                  <p className="statValue">{domain.established}</p>
+                  <p className="statValue">{domain.climat}</p>
                 </div>
                 <div>
-                  <span className="wine_modal_label">Superficie</span>
-                  <p className="statValue">{domain.hectares} hectares</p>
+                  <div className="wine_modal_label">
+                    <Amphora
+                      className="wine_modal_icon"
+                      style={{ marginLeft: "-4px" }}
+                    />
+                    <span>Style</span>
+                  </div>
+                  <p className="statValue">{domain.wine_style}</p>
                 </div>
               </div>
 
               <div className="wine_modal_section">
-                <h3 className="sectionTitle">Spécialités</h3>
-                <div className="badges">
-                  {domain.specialties.map((s, i) => (
-                    <span key={i} className="badge">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {domain.awards && domain.awards.length > 0 && (
-                <div className="wine_modal_section">
-                  <h3 className="sectionTitle">Distinctions</h3>
-                  <div className="awards">
-                    {domain.awards?.map((award, i) => (
-                      <div key={i} className="award">
-                        {award}
-                      </div>
+                <div className="wine_modal_terre">
+                  <div className="wine_modal_label">
+                    <MountainSnow className="wine_modal_icon" />
+                    <span>Térroir</span>
+                  </div>
+                  <div className="badges">
+                    {domain.terroir.map((s, i) => (
+                      <span key={i} className="badge">
+                        {s}
+                      </span>
                     ))}
                   </div>
                 </div>
-              )}
+                <div className="wine_modal_button">
+                  <Button>Grille Tarrifaire</Button>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
