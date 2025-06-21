@@ -41,8 +41,68 @@ main {
 :root {
   --primary-color: #2b090b;
   --black-color: #121111;
+  --black-color: #121111;
   --white-color: #f5f5f5;
+  --white-medium-color: #ffffffd1;
+  --white-small-color: #ffffff87;
   --or-color: #b6935e;
+  --border-gray-color: #27272a;
   --font-prata: "Prata", serif;
   --font-noto: "Noto Sans", sans-serif;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+.flex_row_center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.flex_row_center_center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_row_between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.flex_row_between_center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+.flex_column_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex_column_center_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_column_between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flex_column_between_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
