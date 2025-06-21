@@ -11,6 +11,7 @@ import {
   resetFormState,
   upMessageInfoWithDelay,
 } from "./utils";
+import { MailCheck, MailX } from "lucide-react";
 
 export default function ModalContact({
   isOpen,
@@ -56,7 +57,7 @@ export default function ModalContact({
   const message = React.useMemo(
     () =>
       responseStatus === "error"
-        ? "Échec de l'envoi !"
+        ? "Erreur !"
         : responseStatus === "succes"
         ? "Message envoyé !"
         : "Ecrivez-nous !",
@@ -84,11 +85,18 @@ export default function ModalContact({
           >
             <motion.h2
               className="input_title"
-              style={
-                responseStatus === "error" ? { color: "#9c6060" } : undefined
-              }
+              key={message}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              {message}
+              {message}{" "}
+              {responseStatus === "error" ? (
+                <MailX color="#9c6060" />
+              ) : responseStatus === "succes" ? (
+                <MailCheck color="#acffad" />
+              ) : undefined}
             </motion.h2>
             <div className="input_container">
               <div className="half_input">
