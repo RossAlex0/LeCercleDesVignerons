@@ -3,7 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./contact-modal.css";
 import Input from "@/components/ui/input";
 import Button from "@/components/ui/button";
-import { useState } from "react";
+import { EmailBody } from "@/utils/form-request/type";
+import { sendMail } from "@/utils/form-request";
+import React from "react";
+import {
+  checkValuesOfEmail,
+  resetFormState,
+  upMessageInfoWithDelay,
+} from "./utils";
 
 export default function ModalContact({
   isOpen,
@@ -12,25 +19,60 @@ export default function ModalContact({
   isOpen: boolean;
   setIsOpen: (state: boolean) => void;
 }) {
-  const [form, setForm] = useState({
+  const [form, setForm] = React.useState<EmailBody>({
     name: "",
     subject: "",
     email: "",
     message: "",
   });
+  const [responseStatus, setResponseStatus] = React.useState<
+    string | undefined
+  >(undefined);
 
+  const handleClickToSend = async () => {
+    const isValidEmailValues = checkValuesOfEmail(form);
+
+    if (!isValidEmailValues) {
+      upMessageInfoWithDelay("error", setResponseStatus, setIsOpen);
+      return;
+    }
+
+    const response = await sendMail(form);
+
+    if (
+      !response ||
+      Object.keys(response).includes("error") ||
+      Object.keys(response).includes("errorMessage")
+    ) {
+      upMessageInfoWithDelay("error", setResponseStatus, setIsOpen);
+    } else {
+      upMessageInfoWithDelay("succes", setResponseStatus, setIsOpen);
+      setForm(resetFormState());
+    }
+  };
   const isDisabled =
     !!form.name && !!form.subject && !!form.message && !!form.email;
+
+  const message = React.useMemo(
+    () =>
+      responseStatus === "error"
+        ? "Échec de l'envoi !"
+        : responseStatus === "succes"
+        ? "Message envoyé !"
+        : "Ecrivez-nous !",
+    [responseStatus]
+  );
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0, opacity: 0 }}
+          exit={{ scale: 0.1, opacity: 0 }}
           transition={{ duration: 0.15 }}
-          onClick={(e) => e.stopPropagation()}
           className="contact_container"
+          onClick={() => setIsOpen(false)}
         >
           <motion.div
             className="contact_block"
@@ -38,8 +80,16 @@ export default function ModalContact({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.7 }}
+            onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="input_title">Ecrivez-nous !</h2>
+            <motion.h2
+              className="input_title"
+              style={
+                responseStatus === "error" ? { color: "#9c6060" } : undefined
+              }
+            >
+              {message}
+            </motion.h2>
             <div className="input_container">
               <div className="half_input">
                 <Input
@@ -79,6 +129,7 @@ export default function ModalContact({
               <Button
                 disabled={!isDisabled}
                 style={!isDisabled ? { opacity: "0.4" } : { opacity: "1" }}
+                onClick={handleClickToSend}
               >
                 Envoyer
               </Button>

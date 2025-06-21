@@ -1,6 +1,6 @@
 .contact_container {
   position: absolute;
-  background-color: "rgba(0; 0; 0; 0.647)";
+  background-color: rgba(0, 0, 0, 0.647);
   padding: 2rem;
   width: 100lvw;
   height: 100lvh;
@@ -9,12 +9,14 @@
   align-items: center;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  z-index: 900;
 }
 
 .input_title {
   color: var(--white-color);
   font-size: 2rem;
   font-family: var(--font-prata);
+  text-align: center;
 }
 
 .contact_block {
