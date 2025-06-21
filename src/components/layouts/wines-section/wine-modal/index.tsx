@@ -55,7 +55,7 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
 
               <p className="wine_modal_description">{domain.fullDescription}</p>
 
-              <div className="wine_modal_stats">
+              <div className="wine_modal_stats flex_column">
                 <div>
                   <div className="wine_modal_label">
                     <Thermometer
@@ -77,22 +77,21 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
                   <p className="statValue">{domain.wine_style}</p>
                 </div>
               </div>
-
-              <div className="wine_modal_section">
-                <div className="wine_modal_terre">
+              <div className="wine_modal_section flex_column_center_center">
+                <div className="wine_modal_terre flex_column">
                   <div className="wine_modal_label">
                     <MountainSnow className="wine_modal_icon" />
                     <span>Térroir</span>
                   </div>
-                  <div className="badges">
-                    {domain.terroir.map((s, i) => (
-                      <span key={i} className="badge">
-                        {s}
+                  <div className="wine_badges">
+                    {domain.terroirs.map((terroir, index) => (
+                      <span key={index} className="wine_badge">
+                        {terroir}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className="wine_modal_button">
+                <div className="wine_modal_button flex_row_center">
                   <Button>Grille Tarrifaire</Button>
                 </div>
               </div>

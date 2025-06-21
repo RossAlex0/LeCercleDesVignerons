@@ -12,8 +12,8 @@ export default function Hero() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <section className="home" id="acceuil">
-      <div className="home_container">
+    <section className="home flex_column_center_center" id="acceuil">
+      <div className="home_container flex_column_center_center">
         <Image
           src="/logo/simple_white_logo.svg"
           alt="winebottle"

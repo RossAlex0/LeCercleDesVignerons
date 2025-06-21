@@ -12,8 +12,8 @@
 
 .wine_modal {
   background: #18181b;
-  border: 1px solid #27272a;
-  color: #f4f4f5;
+  border: 1px solid var(--border-gray-color);
+  color: var(--white-color);
   max-width: 1024px;
   width: 100%;
   border-radius: 8px;
@@ -92,12 +92,12 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #a1a1aa;
+  color: var(--white-small-color);
   font-size: 0.875rem;
 }
 
 .wine_modal_icon {
-  color: #a1a1aa;
+  color: var(--white-small-color);
 }
 
 .wine_modal_description {
@@ -115,8 +115,6 @@
 }
 
 .wine_modal_stat {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -126,7 +124,7 @@
   gap: 0.5rem;
   font-size: 0.8rem;
   font-weight: bold;
-  color: #71717a;
+  color: var(--white-small-color);
   text-transform: uppercase;
   margin-bottom: 0.6rem;
   font-family: var(--font-noto);
@@ -134,65 +132,37 @@
 
 .statValue {
   font-weight: 300;
-  color: #e4e4e7;
+  color: var(--white-medium-color);
   font-family: var(--font-prata);
 }
 
 .wine_modal_section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 2rem;
 }
 
 .wine_modal_button {
-  display: flex;
-  justify-content: center;
   padding-top: 2em;
 }
 
 .wine_modal_terre {
-  display: flex;
   width: 100%;
-  flex-direction: column;
   padding-bottom: 1em;
-  border-bottom: 1px solid #27272a;
+  border-bottom: 1px solid var(--border-gray-color);
 }
 
-.sectionTitle {
-  font-size: 0.75rem;
-  color: #71717a;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.badges {
+.wine_badges {
   display: flex;
   gap: 0.5rem;
 }
 
-.badge {
+.wine_badge {
   width: fit-content;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  background: #27272a;
-  color: #e4e4e7;
+  background: var(--border-gray-color);
+  color: var(--white-medium-color);
   border-radius: 999px;
   border: 1px solid #3f3f46;
-}
-
-.awards {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.award {
-  font-size: 0.875rem;
-  color: #a1a1aa;
-  border-left: 2px solid #3f3f46;
-  padding-left: 0.75rem;
 }
 
 .closeBtn {
@@ -205,5 +175,5 @@
 }
 
 .closeBtn:hover {
-  background: #27272a;
+  background: var(--border-gray-color);
 }

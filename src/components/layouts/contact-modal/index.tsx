@@ -72,11 +72,11 @@ export default function ModalContact({
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.1, opacity: 0 }}
           transition={{ duration: 0.15 }}
-          className="contact_container"
+          className="contact_container flex_row_center_center"
           onClick={() => setIsOpen(false)}
         >
           <motion.div
-            className="contact_block"
+            className="contact_block flex_column_between_center"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
@@ -98,8 +98,8 @@ export default function ModalContact({
                 <MailCheck color="#acffad" />
               ) : undefined}
             </motion.h2>
-            <div className="input_container">
-              <div className="half_input">
+            <div className="input_container flex_column_center">
+              <div className="half_input flex_row">
                 <Input
                   stateTools={{
                     state: form.name,
@@ -133,7 +133,7 @@ export default function ModalContact({
                 placeholder="Message"
               />
             </div>
-            <div className="modal_button">
+            <div className="modal_button flex_row">
               <Button
                 disabled={!isDisabled}
                 style={!isDisabled ? { opacity: "0.4" } : { opacity: "1" }}

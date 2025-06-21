@@ -13,7 +13,7 @@ export default function ArrowDown() {
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className="arrow_container"
+      className="flex_row_center_center"
     >
       <motion.button
         type="button"

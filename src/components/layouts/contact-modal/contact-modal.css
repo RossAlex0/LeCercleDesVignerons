@@ -4,9 +4,6 @@
   padding: 2rem;
   width: 100lvw;
   height: 100lvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   z-index: 900;
@@ -25,29 +22,18 @@
   border-radius: 24px;
   background-color: var(--black-color);
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .input_container {
-  display: flex;
   width: 100%;
-  flex-direction: column;
-  justify-content: center;
   gap: 2rem;
 }
 
 .half_input {
-  display: flex;
-  flex-direction: row;
   gap: 1rem;
 }
 
 .modal_button {
-  display: flex;
   width: 100%;
-  flex-direction: row;
   justify-content: space-evenly;
 }

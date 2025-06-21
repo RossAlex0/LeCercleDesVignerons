@@ -1,8 +1,9 @@
 import { WineDomain, wineDomains } from "@/utils/data/regionData";
-import "./wineSection.css";
-import WineCard from "@/components/blocks/card";
+import WineCard from "@/components/blocks/card/wine-card";
 import React from "react";
 import WineModal from "./wine-modal";
+
+import "./wineSection.css";
 
 export default function WineSection() {
   const [selectedDomain, setSelectedDomain] = React.useState<WineDomain | null>(
@@ -10,7 +11,7 @@ export default function WineSection() {
   );
 
   return (
-    <section className="product_container" id="wine_section">
+    <section className="product_container flex_row_between" id="wine_section">
       {wineDomains.map((wine) => (
         <WineCard
           domain={wine}

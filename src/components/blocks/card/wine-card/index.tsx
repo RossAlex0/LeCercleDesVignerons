@@ -36,9 +36,9 @@ export default function WineCard({ domain, onClick }: WineDomainCardProps) {
         </div>
       </div>
       <div className="card_footer">
-        <div className="card_appellations">
+        <div className="card_appellations flex_column_center">
           <h4>Appellations</h4>
-          <div className="appellation_text">
+          <div className="appellation_text flex_row">
             {domain.appellations.map((appellation, index) => (
               <React.Fragment key={appellation}>
                 {index === 0 ? "" : <>&nbsp;-&nbsp;</>}
@@ -54,7 +54,7 @@ export default function WineCard({ domain, onClick }: WineDomainCardProps) {
           </div>
         </div>
         <div className="card_footer_separator" />
-        <div className="card_varieties">
+        <div className="card_varieties flex_row_center_center">
           {domain.varieties.map((variety) => (
             <React.Fragment key={variety}>
               <p className="card_variety_text" key={variety}>
