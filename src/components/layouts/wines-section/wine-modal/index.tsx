@@ -1,6 +1,6 @@
 import { X, MapPin, Thermometer, Amphora, MountainSnow } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { WineDomain } from "@/utils/data/regionData";
+import type { WineDomain } from "@/utils/data";
 import "./wine-modal.css";
 import Button from "@/components/ui/button";
 

@@ -15,7 +15,7 @@ export default function Hero() {
     <section className="home flex_column_center_center" id="acceuil">
       <div className="home_container flex_column_center_center">
         <Image
-          src="/logo/simple_white_logo.svg"
+          src="/logo/simple_white_logo.webp"
           alt="winebottle"
           width={260}
           height={190}

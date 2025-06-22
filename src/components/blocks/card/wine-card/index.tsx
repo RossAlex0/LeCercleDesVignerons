@@ -1,6 +1,6 @@
 import { Wine } from "lucide-react";
 import { motion } from "framer-motion";
-import type { WineDomain } from "@/utils/data/regionData";
+import type { WineDomain } from "@/utils/data";
 import React from "react";
 
 import "./card.css";

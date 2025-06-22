@@ -3,10 +3,6 @@ header {
   max-height: 8rem;
   position: fixed;
   padding: 4rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   z-index: 800;
 }
 

@@ -1,4 +1,4 @@
-import { WineDomain, wineDomains } from "@/utils/data/regionData";
+import { WineDomain, wineDomains } from "@/utils/data";
 import WineCard from "@/components/blocks/card/wine-card";
 import React from "react";
 import WineModal from "./wine-modal";
