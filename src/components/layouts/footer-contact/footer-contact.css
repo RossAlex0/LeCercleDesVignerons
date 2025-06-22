@@ -41,6 +41,10 @@
   font-size: 0.8rem;
 }
 
+.footer_links a {
+  text-decoration: underline;
+}
+
 .footer_disclaimer {
   margin-top: 0.5em;
   text-align: center;
