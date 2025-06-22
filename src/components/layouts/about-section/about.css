@@ -1,0 +1,56 @@
+.about {
+  min-height: 100lvh;
+  width: 100lvw;
+  padding: 15lvh 5lvh;
+  align-items: center;
+}
+
+.about_title {
+  font-family: var(--font-noto);
+  font-size: 3rem;
+  color: var(--white-color);
+  gap: 2rem;
+}
+.about_title_desc {
+  font-family: var(--font-prata);
+  color: var(--white-medium-color);
+  font-size: 1.3rem;
+  width: 65%;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.about_user {
+  width: 100%;
+  padding: 5lvh;
+  gap: 4rem;
+}
+
+.about_store {
+  background-color: var(--black-color);
+  backdrop-filter: blur(6px);
+  height: 25lvh;
+  width: 70%;
+  border-radius: 12px;
+  border: 1px solid var(--border-gray-color);
+  padding: 2rem;
+}
+
+.about_logo_wrapper {
+  position: relative;
+  height: 100%;
+  width: 30%;
+  overflow: hidden;
+}
+
+.about_separtor {
+  height: 100%;
+  width: 1px;
+  background-color: var(--border-gray-color);
+  margin-inline: 5%;
+}
+.about_store_description {
+  flex: 1;
+  color: var(--white-medium-color);
+  font-family: var(--font-prata);
+}

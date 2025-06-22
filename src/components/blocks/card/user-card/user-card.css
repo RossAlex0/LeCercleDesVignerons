@@ -1,0 +1,72 @@
+.user_card_container {
+  height: 50lvh;
+  width: 35%;
+  padding: 1rem;
+  background-color: var(--black-color);
+  border: 1px solid var(--border-gray-color);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  gap: 5%;
+}
+
+.user_card_header {
+  gap: 1rem;
+}
+
+.user_header_name {
+  flex: 1;
+  gap: 0.5em;
+  font-family: var(--font-noto);
+}
+
+.user_header_name p:first-child {
+  font-size: 150%;
+  color: var(--white-color);
+  font-weight: bold;
+}
+
+.user_header_name p:last-child {
+  color: var(--or-color);
+  opacity: 0.7;
+}
+
+.user_image_wrapper {
+  position: relative;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100%;
+  border: 1px solid var(--or-color);
+  overflow: hidden;
+}
+
+.user_avatar {
+  object-fit: cover;
+}
+
+.user_description {
+  flex: 1;
+  color: var(--white-medium-color);
+  font-family: var(--font-prata);
+}
+
+.user_contact {
+  gap: 0.5rem;
+}
+.user_contact_wrapper {
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+  align-items: center;
+  background-color: var(--border-gray-color);
+  border-radius: 8px;
+}
+
+.user_contact_wrapper a {
+  text-decoration: none;
+  color: var(--white-medium-color);
+  font-family: var(--font-noto);
+  font-size: 0.9rem;
+}
+
+.user_icon {
+  color: var(--or-color);
+}
