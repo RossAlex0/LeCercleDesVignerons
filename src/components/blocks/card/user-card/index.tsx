@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
 import { Mail, Smartphone } from "lucide-react";
+import Image from "next/image";
+import { UserCardProps } from "./type";
 
 import "./user-card.css";
-import type { UsersCDV } from "@/utils/data";
-import Image from "next/image";
 
-export default function UserCard({ user }: { user: UsersCDV }) {
+export default function UserCard({ user, index }: UserCardProps) {
   return (
     <motion.div
-      whileHover={{ scale: 1.1 }}
-      transition={{ duration: 0.3 }}
       className="user_card_container flex_column_between"
+      initial={{ opacity: 0, x: index === 0 ? -100 : 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       <div className="user_card_header flex_row_between_center">
         <div className="user_image_wrapper">
@@ -31,7 +33,7 @@ export default function UserCard({ user }: { user: UsersCDV }) {
       <p className="user_description">{user.description}</p>
       <div className="user_contact flex_column">
         <motion.div
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.3 }}
           className="user_contact_wrapper flex_row"
         >
@@ -39,7 +41,7 @@ export default function UserCard({ user }: { user: UsersCDV }) {
           <a href={`mailto:${user.mail}`}>{user.mail}</a>
         </motion.div>
         <motion.div
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.3 }}
           className="user_contact_wrapper flex_row"
         >

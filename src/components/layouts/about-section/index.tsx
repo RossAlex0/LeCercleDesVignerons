@@ -1,33 +1,32 @@
-import { Grape } from "lucide-react";
+import { UserRound } from "lucide-react";
 import UserCard from "@/components/blocks/card/user-card";
+import SectionHeader from "@/components/blocks/section-header";
 import { usersCDV } from "@/utils/data";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { coordinatesCDV } from "@/utils/data";
 
 import "./about.css";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
     <section className="about flex_column" id="about">
-      <h2 className="about_title flex_row_center_center">
-        <Grape size={48} color="#b6935e" />
-        Nos Négociants
-      </h2>
-      <p className="about_title_desc">
+      <SectionHeader Icon={UserRound} title="Notre Équipe">
         Rencontrez notre équipe de négociants experts, passionnés par l&apos;art
         de sélectionner les plus beaux vins français pour notre clientèle
         exigeante.
-      </p>
+      </SectionHeader>
       <div className="about_user flex_row_center">
-        {usersCDV.map((user) => (
-          <UserCard user={user} key={user.firstname} />
+        {usersCDV.map((user, index) => (
+          <UserCard user={user} index={index} key={user.firstname} />
         ))}
       </div>
       <motion.div
         className="about_store flex_row_between_center"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <div className="about_logo_wrapper flex_column_center_center">
           <Image fill src={"/logo/white_logo.svg"} alt="Cercle Des Vignerons" />

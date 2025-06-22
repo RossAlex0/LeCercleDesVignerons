@@ -1,0 +1,14 @@
+.header_section_title {
+  font-family: var(--font-noto);
+  font-size: 3rem;
+  color: var(--white-color);
+  gap: 2rem;
+}
+.header_section_desc {
+  font-family: var(--font-prata);
+  color: var(--white-medium-color);
+  font-size: 1.3rem;
+  width: 65%;
+  margin-top: 2rem;
+  text-align: center;
+}

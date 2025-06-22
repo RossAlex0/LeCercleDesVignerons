@@ -7,15 +7,27 @@ import "./card.css";
 
 interface WineDomainCardProps {
   domain: WineDomain;
+  index: number;
   onClick: () => void;
 }
 
-export default function WineCard({ domain, onClick }: WineDomainCardProps) {
+export default function WineCard({
+  domain,
+  index,
+  onClick,
+}: WineDomainCardProps) {
   return (
     <motion.div
       className="card_container"
+      initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
       whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.2,
+        scale: { duration: 0.3 },
+      }}
+      viewport={{ once: true, amount: 0.2 }}
       onClick={onClick}
     >
       <div className="card_header">
@@ -42,13 +54,7 @@ export default function WineCard({ domain, onClick }: WineDomainCardProps) {
             {domain.appellations.map((appellation, index) => (
               <React.Fragment key={appellation}>
                 {index === 0 ? "" : <>&nbsp;-&nbsp;</>}
-                <motion.p
-                  className="card_footer_text"
-                  whileHover={{ scale: 1.01, color: "white" }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {appellation}
-                </motion.p>
+                <p className="card_footer_text">{appellation}</p>
               </React.Fragment>
             ))}
           </div>
