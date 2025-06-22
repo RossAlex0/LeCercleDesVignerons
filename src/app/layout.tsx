@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/global.css";
 
 const preloadPicture = [
-  { image: "/logo/simple_white_logo.svg" },
+  { image: "/logo/simple_white_logo.webp" },
   { image: "/images/background_home.webp" },
   { image: "/logo/white_logo.svg" },
 ];
@@ -10,21 +10,21 @@ const preloadPicture = [
 export const metadata: Metadata = {
   title: "Cercle Des Vignerons",
   description:
-    "Site officiel du Cercle des Vignerons de Saint-Émilion, Gironde. Découvrez les appellations viticoles de chaque région, avec une présentation détaillée des terroirs et des vins produits. Accédez également aux coordonnées pour entrer directement en contact.",
+    "Site du Cercle des Vignerons de Saint-Émilion, Gironde. Découvrez les appellations viticoles de chaque région, avec une présentation détaillée des terroirs et des vins produits. Accédez également aux coordonnées pour entrer directement en contact.",
   openGraph: {
     title: "Cercle Des Vignerons",
     description:
-      "Site officiel du Cercle des Vignerons de Saint-Émilion, Gironde. Découvrez les appellations viticoles de chaque région, avec une présentation détaillée des terroirs et des vins produits. Accédez également aux coordonnées pour entrer directement en contact.",
+      "Site du Cercle des Vignerons de Saint-Émilion, Gironde. Découvrez les appellations viticoles de chaque région, avec une présentation détaillée des terroirs et des vins produits. Accédez également aux coordonnées pour entrer directement en contact.",
     images: preloadPicture.map((image) => image.image),
   },
   twitter: {
     title: "Cercle Des Vignerons",
     description:
-      "Site officiel du Cercle des Vignerons de Saint-Émilion, Gironde. Découvrez les appellations viticoles de chaque région, avec une présentation détaillée des terroirs et des vins produits. Accédez également aux coordonnées pour entrer directement en contact.",
+      "Site du Cercle des Vignerons de Saint-Émilion, Gironde. Découvrez les appellations viticoles de chaque région, avec une présentation détaillée des terroirs et des vins produits. Accédez également aux coordonnées pour entrer directement en contact.",
     images: preloadPicture.map((image) => image.image),
   },
   icons: {
-    icon: "/logo/simple_white_logo.svg",
+    icon: "/logo/simple_white_logo.webp",
   },
   creator: "Rossignol Alex",
   other: {

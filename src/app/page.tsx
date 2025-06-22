@@ -1,7 +1,10 @@
 "use client";
+
 import Header from "@/components/blocks/header";
+import AboutSection from "@/components/layouts/about-section";
+import FooterContact from "@/components/layouts/footer-contact";
 import Hero from "@/components/layouts/hero";
-import WinesSection from "@/components/layouts/wines-section";
+import WineSection from "@/components/layouts/wines-section";
 
 export default function Home() {
   return (
@@ -9,7 +12,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <WinesSection />
+        <WineSection />
+        <AboutSection />
+        <FooterContact />
       </main>
     </>
   );
