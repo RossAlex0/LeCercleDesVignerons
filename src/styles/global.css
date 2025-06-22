@@ -36,6 +36,7 @@ body {
 main {
   height: 100lvh;
   width: 100%;
+  max-width: 1440px;
   overflow: scroll;
 }
 :root {
