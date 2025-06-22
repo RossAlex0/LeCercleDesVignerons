@@ -15,17 +15,17 @@ export default function Hero() {
     <section className="home flex_column_center_center" id="acceuil">
       <div className="home_container flex_column_center_center">
         <Image
-          src="/logo/simple_white_logo.webp"
+          src="/logo/white_logo_without_text.webp"
           alt="winebottle"
-          width={260}
-          height={190}
+          width={200}
+          height={196}
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,[...]"
         />
-        <h1 className="home_title">
+        <h2 className="home_title">
           Savourez l&apos;authenticité <br />
           et la richesse des grands vins.
-        </h1>
+        </h2>
         <div className="home_button">
           <Button>Grille Tarrifaire</Button>
           <Button

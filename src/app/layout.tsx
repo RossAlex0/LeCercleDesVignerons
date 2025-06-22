@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/global.css";
 
 const preloadPicture = [
-  { image: "/logo/simple_white_logo.webp" },
+  { image: "/logo/white_logo_without_text.webp" },
   { image: "/images/background_home.webp" },
   { image: "/logo/white_logo.svg" },
 ];
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     images: preloadPicture.map((image) => image.image),
   },
   icons: {
-    icon: "/logo/simple_white_logo.webp",
+    icon: "/logo/white_logo_without_text.webp",
   },
   creator: "Rossignol Alex",
   other: {
