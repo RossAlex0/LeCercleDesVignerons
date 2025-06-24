@@ -1,10 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-
-import "./contact-modal.css";
 import Input from "@/components/ui/input";
 import Button from "@/components/ui/button";
-import { EmailBody } from "@/utils/form-request/type";
-import { sendMail } from "@/utils/form-request";
+import { EmailBody } from "@/utils/custom-hook/usePostMail/type";
 import React from "react";
 import {
   checkValuesOfEmail,
@@ -12,6 +9,9 @@ import {
   upMessageInfoWithDelay,
 } from "./utils";
 import { MailCheck, MailX } from "lucide-react";
+import usePostMail from "@/utils/custom-hook/usePostMail";
+
+import "./contact-modal.css";
 
 export default function ModalContact({
   isOpen,
@@ -28,7 +28,9 @@ export default function ModalContact({
   });
   const [responseStatus, setResponseStatus] = React.useState<
     string | undefined
-  >(undefined);
+  >();
+
+  const postMail = usePostMail();
 
   const handleClickToSend = async () => {
     const isValidEmailValues = checkValuesOfEmail(form);
@@ -38,7 +40,7 @@ export default function ModalContact({
       return;
     }
 
-    const response = await sendMail(form);
+    const response = await postMail(form);
 
     if (
       !response ||

@@ -1,4 +1,4 @@
-import { EmailBody } from "@/utils/form-request/type";
+import { EmailBody } from "@/utils/custom-hook/usePostMail/type";
 
 export const resetFormState = () => ({
   name: "",
