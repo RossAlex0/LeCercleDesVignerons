@@ -1,4 +1,4 @@
-header {
+.header_container {
   width: 100%;
   max-height: 8rem;
   position: fixed;
@@ -6,6 +6,11 @@ header {
   z-index: 800;
 }
 
+@media (max-width: 480px) {
+  .header_container {
+    display: none;
+  }
+}
 .header_logo_container {
   position: absolute;
   left: 4rem;

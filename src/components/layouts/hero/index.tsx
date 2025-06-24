@@ -1,27 +1,38 @@
-"use client";
-
 import Image from "next/image";
 import Button from "@/components/ui/button";
 import ArrowDown from "@/components/ui/arrow-down";
 import ModalContact from "../contact-modal";
 import React from "react";
+import useWindowSize from "@/utils/custom-hook/useWindowWidth";
 
 import "./hero.css";
 
 export default function Hero() {
+  const { width } = useWindowSize();
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <section className="home flex_column_center_center" id="acceuil">
       <div className="home_container flex_column_center_center">
-        <Image
-          src="/logo/white_logo_without_text.webp"
-          alt="winebottle"
-          width={200}
-          height={196}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,[...]"
-        />
+        {width && width < 480 ? (
+          <Image
+            src="/logo/white_logo.svg"
+            alt="winebottle"
+            width={290}
+            height={196}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,[...]"
+          />
+        ) : (
+          <Image
+            src="/logo/white_logo_without_text.webp"
+            alt="winebottle"
+            width={200}
+            height={196}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,[...]"
+          />
+        )}
         <h2 className="home_title">
           Savourez l&apos;authenticité <br />
           et la richesse des grands vins.

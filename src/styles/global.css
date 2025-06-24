@@ -34,10 +34,16 @@ body {
   background-size: 110%;
   position: relative;
 }
+
+@media (max-width: 480px) {
+  body {
+    background-size: cover;
+  }
+}
+
 main {
   height: 100lvh;
   width: 100%;
-  margin: auto;
   max-width: 1440px;
   overflow: scroll;
 }

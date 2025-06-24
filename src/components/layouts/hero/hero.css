@@ -2,9 +2,16 @@
   height: 100lvh;
   width: 100%;
 }
+
 .home_container {
   gap: 1rem;
   margin-top: 15vh;
+}
+
+@media (max-width: 480px) {
+  .home_container {
+    margin-top: 5vh;
+  }
 }
 
 .home_title {
@@ -18,4 +25,10 @@
   display: flex;
   gap: 4rem;
   margin-block: 2rem;
+}
+
+@media (max-width: 480px) {
+  .home_button {
+    gap: 1rem;
+  }
 }

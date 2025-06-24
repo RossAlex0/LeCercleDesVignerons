@@ -4,7 +4,7 @@ import NavHeader from "@/components/ui/nav-header";
 
 export default function Header() {
   return (
-    <header className="flex_row_center_center">
+    <header className="header_container flex_row_center_center">
       <div className="header_logo_container">
         <Image
           src="/logo/white_logo.svg"

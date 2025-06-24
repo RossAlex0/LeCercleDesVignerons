@@ -1,13 +1,24 @@
 import { coordinatesCDV, usersCDV } from "@/utils/data";
 import React from "react";
 import { Calendar, Clock, MapPin, Phone } from "lucide-react";
+import useWindowSize from "@/utils/custom-hook/useWindowWidth";
 
 import "./footer-contact.css";
 
 export default function FooterContact() {
+  const { width } = useWindowSize();
+
+  const reponsiveClassName = React.useMemo(
+    () =>
+      width && width < 480
+        ? "flex_column_center_center"
+        : "flex_row_center_center",
+    [width]
+  );
+
   return (
     <section className="footer" id="footer_contact">
-      <div className="footer_infos flex_row_center">
+      <div className={`footer_infos ${reponsiveClassName}`}>
         <div className="footer_info_block flex_row_center_center">
           <MapPin className="footer_icon" />{" "}
           <p>
@@ -46,7 +57,7 @@ export default function FooterContact() {
         </div>
       </div>
       <div className="footer_separator" />
-      <div className="footer_links flex_row_center_center">
+      <div className={`footer_links ${reponsiveClassName}`}>
         <p>© 2025 Cercle Des Vignerons</p>
         <p>•</p>
         <a href="/mentionsLegalCercleDesVignerons.pdf" target="_blank">
