@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import useScrollSmoothToId from "@/utils/custom-hook/useScrollSmoothToId";
 import { motion } from "framer-motion";
-import { scrollToElementById } from "@/utils/scroll-utils";
 import { TabProps } from "./type";
 
 import "./nav-header.css";
 
 const Tab = ({ children, setPosition, refId }: TabProps) => {
+  const scrollToElementById = useScrollSmoothToId();
   const ref = useRef<HTMLLIElement>(null);
 
   return (

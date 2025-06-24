@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import useScrollSmoothToId from "@/utils/custom-hook/useScrollSmoothToId";
 
 import "./arrow-down.css";
-import { scrollToElementById } from "@/utils/scroll-utils";
 
 export default function ArrowDown() {
+  const scrollToElementById = useScrollSmoothToId();
+
   return (
     <motion.div
       animate={{ y: [-2, 8, -2] }}
