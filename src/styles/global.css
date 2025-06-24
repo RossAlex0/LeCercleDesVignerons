@@ -32,10 +32,12 @@ body {
   width: 100lvw;
   background-image: url(/images/background_home.webp);
   background-size: 110%;
+  position: relative;
 }
 main {
   height: 100lvh;
   width: 100%;
+  margin: auto;
   max-width: 1440px;
   overflow: scroll;
 }

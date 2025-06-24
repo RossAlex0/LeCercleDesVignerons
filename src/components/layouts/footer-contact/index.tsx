@@ -49,9 +49,14 @@ export default function FooterContact() {
       <div className="footer_links flex_row_center_center">
         <p>© 2025 Cercle Des Vignerons</p>
         <p>•</p>
-        <a href="/mentionsLegalCercleDesVignerons.pdf">Mentions légales</a>
+        <a href="/mentionsLegalCercleDesVignerons.pdf" target="_blank">
+          Mentions légales
+        </a>
         <p>•</p>
-        <a href="/Politique_de_confidentialite_Cercle_des_Vignerons.pdf">
+        <a
+          href="/Politique_de_confidentialite_Cercle_des_Vignerons.pdf"
+          target="_blank"
+        >
           Politique de confidentialité
         </a>
       </div>
