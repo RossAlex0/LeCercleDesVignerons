@@ -20,8 +20,7 @@ export default function Hero() {
             alt="winebottle"
             width={290}
             height={196}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,[...]"
+            loading="lazy"
           />
         ) : (
           <Image
@@ -29,8 +28,7 @@ export default function Hero() {
             alt="winebottle"
             width={200}
             height={196}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,[...]"
+            loading="lazy"
           />
         )}
         <h2 className="home_title">
