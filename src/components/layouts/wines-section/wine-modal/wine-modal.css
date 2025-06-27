@@ -177,3 +177,25 @@
 .closeBtn:hover {
   background: var(--border-gray-color);
 }
+
+@media (max-width: 480px) {
+  .wine_modal {
+    height: 85%;
+    width: 85%;
+  }
+  .wine_image_wrapper {
+    display: none;
+  }
+  .wine_modal_name {
+    font-size: 1.5rem;
+  }
+  .wine_modal_description {
+    font-size: 0.8rem;
+  }
+  .statValue {
+    font-size: 0.8rem;
+  }
+  .wine_modal_button {
+    padding-top: 1.5em;
+  }
+}

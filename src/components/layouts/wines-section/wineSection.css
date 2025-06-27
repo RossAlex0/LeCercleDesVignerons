@@ -9,3 +9,12 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+@media (max-width: 480px) {
+  .product_container {
+    padding: 10lvh 5lvh 0 5lvh;
+  }
+  .product_card_container {
+    gap: 1.5rem;
+  }
+}

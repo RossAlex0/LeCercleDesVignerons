@@ -99,3 +99,36 @@
   color: var(--white-small-color);
   border-radius: 9999px;
 }
+
+@media (max-width: 480px) {
+  .card_container {
+    height: 45lvh;
+    width: 100%;
+  }
+  .card_header {
+    height: 70%;
+  }
+  .card_header_title {
+    padding: 0.5rem 1rem;
+  }
+  .card_header_title h2 {
+    margin-bottom: 0;
+  }
+  .card_appellations {
+    display: none;
+  }
+  .card_footer_separator {
+    display: none;
+  }
+  .card_varieties {
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+  }
+  .card_varieties p {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+}

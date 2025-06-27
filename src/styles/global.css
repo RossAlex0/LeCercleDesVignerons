@@ -45,7 +45,8 @@ main {
   height: 100lvh;
   width: 100%;
   max-width: 1440px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 :root {
   --primary-color: #2b090b;

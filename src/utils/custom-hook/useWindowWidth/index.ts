@@ -16,7 +16,7 @@ export default function useWindowSize(): WindowSize {
       });
     };
 
-    updateSize(); // set initial size
+    updateSize();
     window.addEventListener("resize", updateSize);
     return () => window.removeEventListener("resize", updateSize);
   }, []);
