@@ -73,7 +73,6 @@ export default function ModalContact({
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.1, opacity: 0 }}
-          transition={{ duration: 0.15 }}
           className="contact_container flex_row_center_center"
           onClick={() => setIsOpen(false)}
         >

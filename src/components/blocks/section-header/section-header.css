@@ -15,17 +15,11 @@
 
 @media (max-width: 480px) {
   .header_section_title {
-    font-family: var(--font-noto);
     font-size: 2rem;
-    color: var(--white-color);
-    gap: 2rem;
+    gap: 1rem;
   }
   .header_section_desc {
-    font-family: var(--font-prata);
-    color: var(--white-medium-color);
     font-size: 1rem;
     width: 100%;
-    margin-top: 2rem;
-    text-align: center;
   }
 }

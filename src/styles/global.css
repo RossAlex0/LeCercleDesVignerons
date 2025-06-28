@@ -31,14 +31,8 @@ body {
   height: 100lvh;
   width: 100lvw;
   background-image: url(/images/background_home.webp);
-  background-size: 110%;
+  background-size: cover;
   position: relative;
-}
-
-@media (max-width: 480px) {
-  body {
-    background-size: cover;
-  }
 }
 
 main {

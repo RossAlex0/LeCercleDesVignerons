@@ -10,16 +10,16 @@ import "./hero.css";
 export default function Hero() {
   const { width } = useWindowSize();
   const [isOpen, setIsOpen] = React.useState(false);
-
+  console.info(width);
   return (
     <section className="home flex_column_center_center" id="acceuil">
       <div className="home_container flex_column_center_center">
-        {width && width < 480 ? (
+        {width && width < 1280 ? (
           <Image
             src="/logo/white_logo.svg"
             alt="winebottle"
-            width={290}
-            height={196}
+            width={360}
+            height={216}
             loading="lazy"
           />
         ) : (

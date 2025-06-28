@@ -39,3 +39,43 @@
   color: var(--white-medium-color);
   font-family: var(--font-prata);
 }
+
+@media (max-width: 480px) {
+  .about_user {
+    padding: 0;
+    gap: 1rem;
+  }
+  .about_store {
+    height: 50lvh;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  .about_logo_wrapper {
+    position: relative;
+    height: 30%;
+    width: 60%;
+    overflow: hidden;
+  }
+  .about_separtor {
+    width: 100%;
+    height: 1px;
+    margin-block: 2rem;
+  }
+  .about_store_description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 834px) and (orientation: portrait) {
+  .about_user {
+    padding: 0;
+    gap: 1rem;
+  }
+  .about_store {
+    height: 20lvh;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+}

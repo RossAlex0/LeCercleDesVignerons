@@ -7,8 +7,10 @@ import { coordinatesCDV } from "@/utils/data";
 
 import "./about.css";
 import { motion } from "framer-motion";
+import useWindowSize from "@/utils/custom-hook/useWindowWidth";
 
 export default function AboutSection() {
+  const { width } = useWindowSize();
   return (
     <section className="about flex_column" id="about">
       <SectionHeader Icon={UserRound} title="Notre Équipe">
@@ -16,13 +18,19 @@ export default function AboutSection() {
         de sélectionner les plus beaux vins français pour notre clientèle
         exigeante.
       </SectionHeader>
-      <div className="about_user flex_row_center">
+      <div
+        className={`about_user flex_${
+          width && width < 480 ? "column" : "row"
+        }_center`}
+      >
         {usersCDV.map((user, index) => (
           <UserCard user={user} index={index} key={user.firstname} />
         ))}
       </div>
       <motion.div
-        className="about_store flex_row_between_center"
+        className={`about_store flex_${
+          width && width < 480 ? "column" : "row"
+        }_between_center`}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
