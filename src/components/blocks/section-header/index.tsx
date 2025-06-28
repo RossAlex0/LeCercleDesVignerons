@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionHeaderProps } from "./type";
+import type { SectionHeaderProps } from "./type";
 import useWindowSize from "@/utils/custom-hook/useWindowWidth";
 
 import "./section-header.css";

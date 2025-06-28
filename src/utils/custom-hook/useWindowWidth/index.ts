@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { WindowSize } from "./type";
+import type { WindowSize } from "./type";
 
 export default function useWindowSize(): WindowSize {
   const [windowSize, setWindowSize] = React.useState<WindowSize | undefined>(

@@ -1,74 +1,62 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import useScrollSmoothToId from "@/utils/custom-hook/useScrollSmoothToId";
+import React from "react";
 import { motion } from "framer-motion";
-import { TabProps } from "./type";
+import useScrollSmoothToId from "@/utils/custom-hook/useScrollSmoothToId";
+import useActiveSection from "@/utils/custom-hook/useActiveSection";
 
 import "./nav-header.css";
 
-const Tab = ({ children, setPosition, refId }: TabProps) => {
-  const scrollToElementById = useScrollSmoothToId();
-  const ref = useRef<HTMLLIElement>(null);
-
-  return (
-    <li
-      ref={ref}
-      onMouseEnter={() => {
-        if (!ref.current) return;
-
-        const { width } = ref.current.getBoundingClientRect();
-        setPosition({
-          width,
-          opacity: 1,
-          left: ref.current.offsetLeft,
-        });
-      }}
-      onClick={() => scrollToElementById(refId)}
-      className="nav_li flex_row_center_center"
-    >
-      {children}
-    </li>
-  );
-};
-
-const Cursor = ({
-  position,
-}: {
-  position: {
-    left: number;
-    width: number;
-    opacity: number;
-  };
-}) => {
-  return <motion.li animate={position} className="nav_motion_li" />;
-};
-
 export default function NavHeader() {
-  const [position, setPosition] = useState({
+  const tabs = [
+    { id: "accueil", label: "Accueil" },
+    { id: "wine_section", label: "Vins" },
+    { id: "about", label: "À Propos" },
+  ];
+  const [cursorStyle, setCursorStyle] = React.useState({
     left: 0,
     width: 0,
     opacity: 0,
   });
+  const scrollTo = useScrollSmoothToId();
+  const activeSection = useActiveSection(tabs.map((tab) => tab.id));
+
+  const tabRefs = React.useRef<HTMLLIElement[]>([]);
+
+  React.useEffect(() => {
+    const index = tabs.findIndex((tab) => tab.id === activeSection);
+    const element = tabRefs.current[index];
+
+    if (element) {
+      setCursorStyle({
+        left: element.offsetLeft,
+        width: element.offsetWidth,
+        opacity: 1,
+      });
+    }
+  }, [activeSection]);
 
   return (
     <ul
       className="nav_ul"
-      onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
+      onMouseLeave={() => {
+        if (!activeSection) setCursorStyle((prev) => ({ ...prev, opacity: 0 }));
+      }}
     >
-      <Tab setPosition={setPosition} refId="acceuil">
-        Acceuil
-      </Tab>
-      <Tab setPosition={setPosition} refId="wine_section">
-        Vins
-      </Tab>
-      <Tab setPosition={setPosition} refId="about">
-        À Propos
-      </Tab>
-      <Tab setPosition={setPosition} refId="footer_contact">
-        Contact
-      </Tab>
-      <Cursor position={position} />
+      {tabs.map((tab, i) => (
+        <li
+          key={tab.id}
+          ref={(element) => {
+            if (element) tabRefs.current[i] = element;
+          }}
+          className="nav_li flex_row_center_center"
+          onClick={() => scrollTo(tab.id)}
+        >
+          {tab.label}
+        </li>
+      ))}
+
+      <motion.li animate={cursorStyle} className="nav_motion_li" />
     </ul>
   );
 }

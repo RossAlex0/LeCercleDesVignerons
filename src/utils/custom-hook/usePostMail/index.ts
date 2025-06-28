@@ -1,5 +1,5 @@
 import React from "react";
-import {
+import type {
   EmailBody,
   ResponseServer,
 } from "@/utils/custom-hook/usePostMail/type";

@@ -1,6 +1,6 @@
-import { coordinatesCDV, usersCDV } from "@/utils/data";
+import { coordinatesCDV } from "@/utils/data";
 import React from "react";
-import { Calendar, Clock, MapPin, Phone } from "lucide-react";
+import { Calendar, Clock, ExternalLink, MapPin } from "lucide-react";
 import useWindowSize from "@/utils/custom-hook/useWindowWidth";
 
 import "./footer-contact.css";
@@ -17,21 +17,10 @@ export default function FooterContact() {
   );
 
   return (
-    <section className="footer" id="footer_contact">
+    <section className="footer">
       <div className={`footer_infos ${reponsiveClassName}`}>
         <div className="footer_info_block flex_row_center_center">
-          <MapPin className="footer_icon" />{" "}
-          <p>
-            {coordinatesCDV.adress
-              .replace(",", ",\n")
-              .split("\n")
-              .map((line, index) => (
-                <React.Fragment key={index}>
-                  {line}
-                  <br />
-                </React.Fragment>
-              ))}
-          </p>
+          <MapPin className="footer_icon" /> <p>{coordinatesCDV.adress}</p>
         </div>
         <div className="footer_info_block flex_row_center_center">
           <Clock className="footer_icon" />
@@ -45,44 +34,40 @@ export default function FooterContact() {
             {coordinatesCDV.openingDay} - {coordinatesCDV.closingDay}
           </p>
         </div>
-        <div className="footer_info_block flex_row_center_center">
-          <Phone className="footer_icon" />
-          <div className="flex_column">
-            {usersCDV.map((user, index) => (
-              <a href={`tel:${user.phone}`} key={index}>
-                {user.phone}
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
       <div className="footer_separator" />
       <div className={`footer_links ${reponsiveClassName}`}>
         <p>© 2025 Cercle Des Vignerons</p>
         <p>•</p>
-        <a href="/mentionsLegalCercleDesVignerons.pdf" target="_blank">
-          Mentions légales
-        </a>
+        <div className="footer_policy flex_row_center_center">
+          <a href="/mentionsLegalCercleDesVignerons.pdf" target="_blank">
+            Mentions légales
+          </a>{" "}
+          <ExternalLink size={16} />
+        </div>
         <p>•</p>
-        <a
-          href="/Politique_de_confidentialite_Cercle_des_Vignerons.pdf"
-          target="_blank"
-        >
-          Politique de confidentialité
-        </a>
+        <div className="footer_policy flex_row_center_center">
+          <a
+            href="/Politique_de_confidentialite_Cercle_des_Vignerons.pdf"
+            target="_blank"
+          >
+            Politique de confidentialité
+          </a>
+          <ExternalLink size={16} />
+        </div>
       </div>
       <p className="footer_disclaimer">Tous droits réservés.</p>
-      <p className="footer_disclaimer">
-        Site web réaliser par Rossignol Alex -{" "}
+      <div className="footer_disclaimer flex_row_center_center">
+        <p>Site web réaliser par Rossignol Alex </p>{" "}
         <a
           href="https://alex-rossignol.fr"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: "underline" }}
         >
-          Site
+          <ExternalLink size={16} />
         </a>
-      </p>
+      </div>
+
       <p className="footer_disclaimer">
         L&apos;abus d&apos;alcool est dangereux pour la santé. À consommer avec
         modération.

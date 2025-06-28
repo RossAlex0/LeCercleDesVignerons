@@ -1,15 +1,9 @@
 import { Wine } from "lucide-react";
 import { motion } from "framer-motion";
-import type { WineDomain } from "@/utils/data";
 import React from "react";
+import type { WineDomainCardProps } from "./type";
 
 import "./card.css";
-
-interface WineDomainCardProps {
-  domain: WineDomain;
-  index: number;
-  onClick: () => void;
-}
 
 export default function WineCard({
   domain,
@@ -24,7 +18,6 @@ export default function WineCard({
       whileHover={{ scale: 1.02 }}
       transition={{
         duration: 0.6,
-        delay: index * 0.2,
         scale: { duration: 0.3 },
       }}
       viewport={{ once: true, amount: 0.2 }}

@@ -91,7 +91,6 @@
   .user_card_container {
     height: auto;
     width: 100%;
-    padding: 0.5rem;
     gap: 1.5em;
   }
   .user_image_wrapper {
@@ -105,7 +104,7 @@
 
 @media (min-width: 834px) and (max-height: 834px) and (orientation: landscape) {
   .user_card_container {
-    height: 60lvh;
+    height: auto;
     gap: 0.5em;
   }
   .user_image_wrapper {

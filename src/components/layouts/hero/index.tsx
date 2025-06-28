@@ -10,27 +10,29 @@ import "./hero.css";
 export default function Hero() {
   const { width } = useWindowSize();
   const [isOpen, setIsOpen] = React.useState(false);
-  console.info(width);
+
+  const imageSize = React.useMemo(
+    () =>
+      width
+        ? width > 1280
+          ? { width: 390, height: 216 }
+          : width < 480
+          ? { width: 300, height: 186 }
+          : { width: 490, height: 296 }
+        : { width: 390, height: 216 },
+    [width]
+  );
+
   return (
-    <section className="home flex_column_center_center" id="acceuil">
+    <section className="home flex_column_center_center" id="accueil">
       <div className="home_container flex_column_center_center">
-        {width && width < 1280 ? (
-          <Image
-            src="/logo/white_logo.svg"
-            alt="winebottle"
-            width={360}
-            height={216}
-            loading="lazy"
-          />
-        ) : (
-          <Image
-            src="/logo/white_logo_without_text.webp"
-            alt="winebottle"
-            width={200}
-            height={196}
-            loading="lazy"
-          />
-        )}
+        <Image
+          src="/logo/white_logo.svg"
+          alt="winebottle"
+          width={imageSize.width}
+          height={imageSize.height}
+          loading="lazy"
+        />
         <h2 className="home_title">
           Savourez l&apos;authenticité <br />
           et la richesse des grands vins.
@@ -50,7 +52,7 @@ export default function Hero() {
         </div>
         <ArrowDown />
       </div>
-      <ModalContact isOpen={isOpen} setIsOpen={setIsOpen} />
+      {isOpen ? <ModalContact onClose={() => setIsOpen(false)} /> : undefined}
     </section>
   );
 }

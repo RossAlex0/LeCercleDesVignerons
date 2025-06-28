@@ -6,4 +6,5 @@ export type TabProps = {
     opacity: number;
   }) => void;
   refId: string;
+  ref: React.Ref<HTMLLIElement>;
 };

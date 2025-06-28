@@ -11,9 +11,3 @@
     display: none;
   }
 }
-.header_logo_container {
-  position: absolute;
-  left: 4rem;
-  width: 8%;
-  height: 100%;
-}

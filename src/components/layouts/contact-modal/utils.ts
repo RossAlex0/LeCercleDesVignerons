@@ -1,6 +1,6 @@
-import { EmailBody } from "@/utils/custom-hook/usePostMail/type";
+import type { EmailBody } from "@/utils/custom-hook/usePostMail/type";
 
-export const resetFormState = () => ({
+export const resetFormState = (): EmailBody => ({
   name: "",
   subject: "",
   email: "",
@@ -10,19 +10,19 @@ export const resetFormState = () => ({
 export const upMessageInfoWithDelay = (
   status: "succes" | "error",
   setResponseStatus: (state: string | undefined) => void,
-  setIsOpen: (state: boolean) => void
+  onClose: () => void
 ): void => {
   setResponseStatus(status);
 
   setTimeout(() => {
     setResponseStatus(undefined);
     if (status === "succes") {
-      setIsOpen(false);
+      onClose();
     }
   }, 4000);
 };
 
-export const checkValuesOfEmail = (emailForm: EmailBody) => {
+export const isValidEmailValues = (emailForm: EmailBody): boolean => {
   const { name, subject, email, message } = emailForm;
 
   if (!name.trim() || !subject.trim() || !email.trim() || !message.trim()) {

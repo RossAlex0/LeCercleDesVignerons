@@ -21,7 +21,10 @@ export default function WineSection() {
     [isMobile]
   );
 
-  const title = isMobile ? "Vins & Régions" : "Nos Vins & Leurs Régions";
+  const title = React.useMemo(
+    () => (isMobile ? "Vins & Régions" : "Nos Vins & Leurs Régions"),
+    [isMobile]
+  );
 
   return (
     <section className="product_container flex_column" id="wine_section">
@@ -41,12 +44,12 @@ export default function WineSection() {
             onClick={() => setSelectedDomain(wine)}
           />
         ))}
-        {selectedDomain && (
+        {selectedDomain ? (
           <WineModal
             domain={selectedDomain}
             onClose={() => setSelectedDomain(null)}
           />
-        )}
+        ) : undefined}
       </div>
     </section>
   );

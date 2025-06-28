@@ -14,8 +14,8 @@
   background: #18181b;
   border: 1px solid var(--border-gray-color);
   color: var(--white-color);
+  max-height: 590px;
   max-width: 1024px;
-  width: 100%;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -33,7 +33,6 @@
 
 .wine_image_wrapper {
   position: relative;
-  width: 100%;
   aspect-ratio: 4/3;
 }
 

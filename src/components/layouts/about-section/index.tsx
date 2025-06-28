@@ -33,8 +33,8 @@ export default function AboutSection() {
         }_between_center`}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
         <div className="about_logo_wrapper flex_column_center_center">
           <Image fill src={"/logo/white_logo.svg"} alt="Cercle Des Vignerons" />

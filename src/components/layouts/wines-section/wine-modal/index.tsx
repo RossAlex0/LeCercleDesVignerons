@@ -1,13 +1,9 @@
 import { X, MapPin, Thermometer, Amphora, MountainSnow } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { WineDomain } from "@/utils/data";
-import "./wine-modal.css";
 import Button from "@/components/ui/button";
+import type { WineDomainModalProps } from "./type";
 
-interface WineDomainModalProps {
-  domain: WineDomain;
-  onClose: () => void;
-}
+import "./wine-modal.css";
 
 export default function WineModal({ domain, onClose }: WineDomainModalProps) {
   return (
@@ -17,6 +13,7 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        onClick={onClose}
       >
         <motion.div
           className="wine_modal"
@@ -24,6 +21,7 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 50, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
+          onClick={(e) => e.stopPropagation()}
         >
           <div className="wine_wrapper">
             <div className="wine_image_wrapper">
