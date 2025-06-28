@@ -27,9 +27,7 @@ export default function ModalContact({ onClose }: { onClose: () => void }) {
   const postMail = usePostMail();
 
   const handleClickToSend = async () => {
-    const isValidEmailValues = isValidEmailValues(form);
-
-    if (!isValidEmailValues) {
+    if (!isValidEmailValues(form)) {
       upMessageInfoWithDelay("error", setResponseStatus, onClose);
       return;
     }
