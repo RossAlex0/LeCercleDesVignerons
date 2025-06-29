@@ -1,0 +1,20 @@
+.not_found {
+  height: 100vh;
+  width: 100vw;
+}
+
+.not_found_block {
+  gap: 1rem;
+}
+
+.not_found_block h1 {
+  color: var(--white-color);
+  font-family: var(--font-noto);
+  font-size: 5rem;
+  opacity: 0.8;
+}
+.not_found_block p {
+  color: var(--white-color);
+  font-family: var(--font-noto);
+  opacity: 0.8;
+}
