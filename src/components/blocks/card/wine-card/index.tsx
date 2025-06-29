@@ -31,6 +31,7 @@ export default function WineCard({
           animate={{ scale: 1 }}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.5 }}
+          alt={domain.name}
         />
         <div className="card_header_overlay" />
         <div className="card_header_title">

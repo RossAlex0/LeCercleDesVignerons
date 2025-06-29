@@ -40,7 +40,11 @@ export default function FooterContact() {
         <p>© 2025 Cercle Des Vignerons</p>
         <p>•</p>
         <div className="footer_policy flex_row_center_center">
-          <a href="/mentionsLegalCercleDesVignerons.pdf" target="_blank">
+          <a
+            rel="legal"
+            href="/mentionsLegalCercleDesVignerons.pdf"
+            target="_blank"
+          >
             Mentions légales
           </a>{" "}
           <ExternalLink size={16} />
@@ -48,6 +52,7 @@ export default function FooterContact() {
         <p>•</p>
         <div className="footer_policy flex_row_center_center">
           <a
+            rel="privacy-policy"
             href="/Politique_de_confidentialite_Cercle_des_Vignerons.pdf"
             target="_blank"
           >
