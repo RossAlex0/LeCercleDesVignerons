@@ -28,7 +28,19 @@
 }
 
 @media (max-width: 480px) {
+  .home_title {
+    padding-inline: 1rem;
+  }
   .home_button {
     gap: 1rem;
+  }
+  .hero_logo {
+    margin-top: -4rem;
+  }
+}
+
+@media (min-width: 834px) and (max-height: 834px) and (orientation: landscape) {
+  .home_container img {
+    max-height: 20lvh;
   }
 }

@@ -17,7 +17,7 @@ export default function Hero() {
         ? width > 1280
           ? { width: 390, height: 216 }
           : width < 480
-          ? { width: 300, height: 186 }
+          ? { width: 260, height: 186 }
           : { width: 490, height: 296 }
         : { width: 390, height: 216 },
     [width]
@@ -29,6 +29,7 @@ export default function Hero() {
         <Image
           src="/logo/white_logo.svg"
           alt="winebottle"
+          className="hero_logo"
           width={imageSize.width}
           height={imageSize.height}
           loading="lazy"

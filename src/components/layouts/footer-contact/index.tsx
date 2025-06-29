@@ -47,7 +47,7 @@ export default function FooterContact() {
           >
             Mentions légales
           </a>{" "}
-          <ExternalLink size={16} />
+          <ExternalLink size={12} />
         </div>
         <p>•</p>
         <div className="footer_policy flex_row_center_center">
@@ -58,24 +58,26 @@ export default function FooterContact() {
           >
             Politique de confidentialité
           </a>
-          <ExternalLink size={16} />
+          <ExternalLink size={12} />
         </div>
       </div>
       <p className="footer_disclaimer">Tous droits réservés.</p>
       <div className="footer_disclaimer flex_row_center_center">
-        <p>Site web réaliser par Rossignol Alex </p>{" "}
+        <p>Site web réaliser par Rossignol Alex -</p>{" "}
         <a
           href="https://alex-rossignol.fr"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ textDecoration: "underline" }}
         >
-          <ExternalLink size={16} />
+          Site
+          <ExternalLink size={12} style={{ marginLeft: 4 }} />
         </a>
       </div>
 
       <p className="footer_disclaimer">
-        L&apos;abus d&apos;alcool est dangereux pour la santé. À consommer avec
-        modération.
+        L&apos;abus d&apos;alcool est dangereux pour la santé. <br />À consommer
+        avec modération.
       </p>
     </section>
   );
