@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/ui/button";
+// import { useRouter } from "next/navigation";
 import ArrowDown from "@/components/ui/arrow-down";
 import ModalContact from "../contact-modal";
 import React from "react";
@@ -9,6 +10,8 @@ import "./hero.css";
 
 export default function Hero() {
   const { width } = useWindowSize();
+  // const router = useRouter();
+
   const [isOpen, setIsOpen] = React.useState(false);
 
   const imageSize = React.useMemo(
@@ -22,6 +25,16 @@ export default function Hero() {
         : { width: 390, height: 216 },
     [width]
   );
+
+  const handleClickButtonPrices = () => {
+    // router.push("/DOC_TARIF_07082025.xlsx");
+    window.open(
+      "https://docs.google.com/viewer?url=" +
+        window.location.origin +
+        "/DOC_TARIF_07082025.xlsx",
+      "_blank"
+    );
+  };
 
   return (
     <section className="home flex_column_center_center" id="accueil">
@@ -39,7 +52,7 @@ export default function Hero() {
           et la richesse des grands vins.
         </h2>
         <div className="home_button">
-          <Button>Grille Tarrifaire</Button>
+          <Button onClick={handleClickButtonPrices}>Grille Tarrifaire</Button>
           <Button
             style={{
               backgroundColor: "transparent",

@@ -6,6 +6,15 @@ import type { WineDomainModalProps } from "./type";
 import "./wine-modal.css";
 
 export default function WineModal({ domain, onClose }: WineDomainModalProps) {
+  const handleClickButtonPrices = () => {
+    window.open(
+      "https://docs.google.com/viewer?url=" +
+        window.location.origin +
+        "/DOC_TARIF_07082025.xlsx",
+      "_blank"
+    );
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -90,7 +99,9 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
                   </div>
                 </div>
                 <div className="wine_modal_button flex_row_center">
-                  <Button>Grille Tarrifaire</Button>
+                  <Button onClick={handleClickButtonPrices}>
+                    Grille Tarrifaire
+                  </Button>
                 </div>
               </div>
             </div>
