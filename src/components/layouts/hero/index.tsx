@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Button from "@/components/ui/button";
-// import { useRouter } from "next/navigation";
 import ArrowDown from "@/components/ui/arrow-down";
 import ModalContact from "../contact-modal";
 import React from "react";
@@ -10,7 +9,6 @@ import "./hero.css";
 
 export default function Hero() {
   const { width } = useWindowSize();
-  // const router = useRouter();
 
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -27,11 +25,15 @@ export default function Hero() {
   );
 
   const handleClickButtonPrices = () => {
-    // router.push("/DOC_TARIF_07082025.xlsx");
+    // window.open(
+    //   "https://docs.google.com/viewer?url=" +
+    //     window.location.origin +
+    //     "/DOC_TARIF_07082025.xlsx",
+    //   "_blank"
+    // );
+    const fileUrl = window.location.origin + "/DOC_TARIF_07082025.xlsx";
     window.open(
-      "https://docs.google.com/viewer?url=" +
-        window.location.origin +
-        "/DOC_TARIF_07082025.xlsx",
+      "https://view.officeapps.live.com/op/embed.aspx?src=" + fileUrl,
       "_blank"
     );
   };

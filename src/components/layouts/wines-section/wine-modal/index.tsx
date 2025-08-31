@@ -7,10 +7,9 @@ import "./wine-modal.css";
 
 export default function WineModal({ domain, onClose }: WineDomainModalProps) {
   const handleClickButtonPrices = () => {
+    const fileUrl = window.location.origin + "/DOC_TARIF_07082025.xlsx";
     window.open(
-      "https://docs.google.com/viewer?url=" +
-        window.location.origin +
-        "/DOC_TARIF_07082025.xlsx",
+      "https://view.officeapps.live.com/op/embed.aspx?src=" + fileUrl,
       "_blank"
     );
   };
