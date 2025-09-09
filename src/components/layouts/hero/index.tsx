@@ -54,7 +54,7 @@ export default function Hero() {
           et la richesse des grands vins.
         </h2>
         <div className="home_button">
-          <Button onClick={handleClickButtonPrices}>Grille Tarrifaire</Button>
+          <Button onClick={handleClickButtonPrices}>Grille Tarifaire</Button>
           <Button
             style={{
               backgroundColor: "transparent",

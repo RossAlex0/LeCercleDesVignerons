@@ -99,7 +99,7 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
                 </div>
                 <div className="wine_modal_button flex_row_center">
                   <Button onClick={handleClickButtonPrices}>
-                    Grille Tarrifaire
+                    Grille Tarifaire
                   </Button>
                 </div>
               </div>

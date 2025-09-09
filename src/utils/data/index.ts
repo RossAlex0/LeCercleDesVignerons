@@ -119,7 +119,7 @@ export const usersCDV: UsersCDV[] = [
     description:
       "Fondateur du Cercle des Vignerons en 2001. Il a construit son parcours autour de sa passion pour le vin, les terroirs et les histoires humaines qui l'accompagnent.",
     phone: "06 85 26 94 30",
-    mail: "cerclevigneron@aol.fr",
+    mail: "ceerclevignerons@gmail.com",
     avatar: "/images/luc.webp",
   },
   {
@@ -127,7 +127,7 @@ export const usersCDV: UsersCDV[] = [
     lastname: "Lacombe",
     role: "Négociant en vin",
     description:
-      "Animé par une vision moderne du métier, il perpétue l’héritage familial avec exigence et curiosité et un vrai sens du produit.",
+      "Animé par une vision moderne du métier, il perpétue l’héritage familial avec exigence et un véritable sens du produit, partageant son savoir-faire pour les terroirs qui le composent.",
     phone: "06 87 34 08 74",
     mail: "yoan.lacombe@gmail.com",
     avatar: "/images/yoan.webp",

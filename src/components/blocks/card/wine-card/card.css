@@ -1,5 +1,6 @@
 .card_container {
-  height: 80lvh;
+  height: auto;
+  min-height: 600px;
   max-height: 650px;
   width: calc(50% - 2rem);
   background: var(--black-color);
@@ -60,7 +61,7 @@
 .card_appellations {
   width: 100%;
   padding: 1rem;
-  gap: 0.7em;
+  gap: 1.3em;
 }
 
 .card_appellations h4 {

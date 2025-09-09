@@ -41,6 +41,11 @@ main {
   max-width: 1440px;
   overflow-y: scroll;
   overflow-x: hidden;
+  margin: auto;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 :root {
   --primary-color: #2b090b;

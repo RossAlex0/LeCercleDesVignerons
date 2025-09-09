@@ -2,7 +2,9 @@
   position: absolute;
   background-color: rgba(0, 0, 0, 0.647);
   padding: 2rem;
-  width: 100lvw;
+  left: 0;
+  right: 0;
+  width: auto;
   height: 100lvh;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
