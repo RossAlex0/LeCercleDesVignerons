@@ -119,7 +119,7 @@ export const usersCDV: UsersCDV[] = [
     description:
       "Fondateur du Cercle des Vignerons en 2001. Il a construit son parcours autour de sa passion pour le vin, les terroirs et les histoires humaines qui l'accompagnent.",
     phone: "06 85 26 94 30",
-    mail: "ceerclevignerons@gmail.com",
+    mail: "cerclevignerons@gmail.com",
     avatar: "/images/luc.webp",
   },
   {

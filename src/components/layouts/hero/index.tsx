@@ -25,12 +25,6 @@ export default function Hero() {
   );
 
   const handleClickButtonPrices = () => {
-    // window.open(
-    //   "https://docs.google.com/viewer?url=" +
-    //     window.location.origin +
-    //     "/DOC_TARIF_07082025.xlsx",
-    //   "_blank"
-    // );
     const fileUrl = window.location.origin + "/DOC_TARIF_07082025.xlsx";
     window.open(
       "https://view.officeapps.live.com/op/embed.aspx?src=" + fileUrl,
