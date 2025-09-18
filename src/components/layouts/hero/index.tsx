@@ -4,6 +4,7 @@ import ArrowDown from "@/components/ui/arrow-down";
 import ModalContact from "../contact-modal";
 import React from "react";
 import useWindowSize from "@/utils/custom-hook/useWindowWidth";
+import { DOC_TARIF } from "@/utils/globals-variable";
 
 import "./hero.css";
 
@@ -25,7 +26,7 @@ export default function Hero() {
   );
 
   const handleClickButtonPrices = () => {
-    const fileUrl = window.location.origin + "/DOC_TARIF_07082025.xlsx";
+    const fileUrl = window.location.origin + DOC_TARIF;
     window.open(
       "https://view.officeapps.live.com/op/embed.aspx?src=" + fileUrl,
       "_blank"

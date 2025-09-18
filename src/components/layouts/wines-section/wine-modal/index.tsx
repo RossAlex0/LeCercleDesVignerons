@@ -2,12 +2,13 @@ import { X, MapPin, Thermometer, Amphora, MountainSnow } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/button";
 import type { WineDomainModalProps } from "./type";
+import { DOC_TARIF } from "@/utils/globals-variable";
 
 import "./wine-modal.css";
 
 export default function WineModal({ domain, onClose }: WineDomainModalProps) {
   const handleClickButtonPrices = () => {
-    const fileUrl = window.location.origin + "/DOC_TARIF_07082025.xlsx";
+    const fileUrl = window.location.origin + DOC_TARIF;
     window.open(
       "https://view.officeapps.live.com/op/embed.aspx?src=" + fileUrl,
       "_blank"

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+
 import "@/styles/global.css";
-const URL = "https://cercle-des-vignerons.vercel.app";
+
+const URL = "https://www.cerclevignerons.com";
 const pictures = [
   {
     url: `${URL}/images/background_home.webp`,
@@ -149,7 +152,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics mode="production" />;
+      </body>
     </html>
   );
 }
