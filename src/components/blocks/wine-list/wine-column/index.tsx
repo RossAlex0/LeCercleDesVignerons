@@ -21,9 +21,8 @@ export default function WinesColumn({ header, values }: WineColumnProps) {
           ) : (
             <p>
               {value}
-              {header === "Prix unitaire" || header === "Valeur totale"
-                ? " €"
-                : ""}
+              {header === "Prix unitaire" ? " € HT" : ""}
+              {header === "Valeur totale" ? " €" : ""}
             </p>
           )}
         </div>
