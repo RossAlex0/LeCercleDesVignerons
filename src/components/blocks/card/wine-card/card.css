@@ -106,11 +106,12 @@
 
 @media (max-width: 480px) {
   .card_container {
+    min-height: 40lvh;
     height: 45lvh;
     width: 100%;
   }
   .card_header {
-    height: 70%;
+    height: 100%;
   }
   .card_header_title {
     padding: 0.5rem 1rem;
@@ -125,14 +126,10 @@
     display: none;
   }
   .card_varieties {
-    height: 100%;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    padding: 1rem;
+    display: none;
   }
   .card_varieties p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 

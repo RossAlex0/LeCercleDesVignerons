@@ -5,11 +5,20 @@ import type { WineDomainModalProps } from "./type";
 
 import "./wine-modal.css";
 import { useRouter } from "next/navigation";
+import useWindowSize from "@/utils/custom-hook/useWindowWidth";
+import { useGetWinePrices } from "@/utils/custom-hook/useGetWinePrices";
 
 export default function WineModal({ domain, onClose }: WineDomainModalProps) {
   const router = useRouter();
+  const { width } = useWindowSize();
+  const { downloadWineDocs } = useGetWinePrices();
+  const isMobileDevice = !!(width && width < 480);
 
   const handleClickButtonPrices = () => {
+    if (isMobileDevice) {
+      downloadWineDocs();
+      return;
+    }
     if (domain.name === "Bordeaux") {
       router.push("/catalog?region=bordeaux");
     } else {
@@ -102,7 +111,9 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
                 </div>
                 <div className="wine_modal_button flex_row_center">
                   <Button onClick={handleClickButtonPrices}>
-                    Voir les vins
+                    {isMobileDevice
+                      ? "Télécharger les tarifs"
+                      : "Voir les vins"}
                   </Button>
                 </div>
               </div>

@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   height: 2.5rem;
+  overflow: hidden;
 }
 
 .column_value > p {
@@ -35,4 +36,14 @@
 .value_CBO {
   color: #9d897b;
   font-weight: 300;
+}
+
+@media (min-width: 834px) and (max-height: 834px) and (orientation: landscape) {
+}
+@media (min-width: 600px) and (max-width: 834px) and (orientation: portrait) {
+  .column_value > p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 480px) {
 }

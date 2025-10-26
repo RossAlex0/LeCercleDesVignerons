@@ -9,9 +9,12 @@ import useWindowSize from "@/utils/custom-hook/useWindowWidth";
 import { useRouter } from "next/navigation";
 
 import "./hero.css";
+import { useGetWinePrices } from "@/utils/custom-hook/useGetWinePrices";
+import { Download } from "lucide-react";
 
 export default function Hero() {
   const { width } = useWindowSize();
+  const { downloadWineDocs } = useGetWinePrices();
 
   const router = useRouter();
 
@@ -29,7 +32,13 @@ export default function Hero() {
     [width]
   );
 
+  const isMobileDevice = !!(width && width < 480);
+
   const handleClickButtonPrices = () => {
+    if (isMobileDevice) {
+      downloadWineDocs();
+      return;
+    }
     router.push("/catalog");
   };
 
@@ -49,7 +58,17 @@ export default function Hero() {
           et la richesse des grands vins.
         </h2>
         <div className="home_button">
-          <Button onClick={handleClickButtonPrices}>Tous les vins</Button>
+          <Button onClick={handleClickButtonPrices}>
+            {isMobileDevice ? (
+              <>
+                <div className="flex_row_center_center">
+                  <Download /> <p style={{ marginLeft: "0.5rem" }}>Tarifs</p>
+                </div>
+              </>
+            ) : (
+              "Tous les vins"
+            )}
+          </Button>
           <Button
             style={{
               backgroundColor: "transparent",

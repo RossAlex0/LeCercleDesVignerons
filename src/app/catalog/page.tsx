@@ -44,6 +44,7 @@ export default function CatalogWine() {
       setDataFiltered(filterData(undefined, productValues));
     }
   }, [region, isLoad]);
+
   // Get values from data to input filter
 
   const millesimes = React.useMemo(

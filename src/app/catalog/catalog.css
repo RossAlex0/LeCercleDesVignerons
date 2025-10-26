@@ -66,3 +66,6 @@
 .width_Valeur_totale {
   width: 12%;
 }
+
+@media (min-width: 834px) and (max-height: 834px) and (orientation: landscape) {
+}
