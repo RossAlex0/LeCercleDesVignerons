@@ -1,0 +1,15 @@
+.column_header {
+  background-color: #f5f3f0;
+  height: 2.5rem;
+  padding-inline: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #e6e4da;
+  display: flex;
+  align-items: center;
+}
+
+.column_header > p {
+  font-family: var(--font-noto);
+  color: #854938;
+  font-weight: 700;
+}

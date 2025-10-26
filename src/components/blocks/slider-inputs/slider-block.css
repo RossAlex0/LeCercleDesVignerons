@@ -1,0 +1,60 @@
+/* rc-slider classes – use !important to override the default styles */
+.css-1asissc-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
+  background-color: var(--white-color) !important;
+  border-radius: 16px !important;
+  color: var(--or-color) !important;
+}
+
+.css-1xcmt9q-MuiSlider-thumb {
+  color: var(--white-color) !important;
+}
+.css-1xcmt9q-MuiSlider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px #8549382e !important;
+}
+.css-1xcmt9q-MuiSlider-thumb.Mui-active {
+  box-shadow: 0px 0px 0px 14px #8549382e !important;
+}
+.css-1xcmt9q-MuiSlider-thumb.Mui-active:hover {
+  box-shadow: 0px 0px 0px 14px #8549382e !important;
+}
+
+.css-xvk2i-MuiSlider-track {
+  color: var(--or-color) !important;
+}
+
+.MuiSlider-rail {
+  color: var(--or-color) !important;
+  border-radius: 32px !important;
+}
+
+/* ************************************************************** */
+
+.input_slider_number {
+  gap: 1rem;
+  justify-content: space-around;
+}
+.input_slider_number > input {
+  padding: 8px 12px;
+  height: 2em;
+  text-align: center;
+  width: 15% !important;
+}
+.input_slider_number > input::placeholder {
+  font-size: 0.8rem;
+}
+
+.slider_label {
+  width: fit-content;
+  border: 1px solid #e3d1c6;
+  background-color: #faf5eb;
+  padding: 0.15rem 0.5rem;
+  border-radius: 16px;
+  font-family: var(--font-noto);
+}
+.slider_container {
+  width: 100%;
+  gap: 0.2rem;
+  border: 1px solid var(--or-color);
+  padding: 1rem;
+  border-radius: 24px;
+}

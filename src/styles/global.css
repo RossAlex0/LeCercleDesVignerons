@@ -26,6 +26,7 @@
 }
 html {
   background-color: var(--black-color);
+  overflow: hidden;
 }
 body {
   height: 100lvh;
@@ -33,6 +34,7 @@ body {
   background-image: url(/images/background_home.webp);
   background-size: cover;
   position: relative;
+  overflow: hidden;
 }
 
 main {

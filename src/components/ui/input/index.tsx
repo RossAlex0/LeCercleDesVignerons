@@ -1,7 +1,8 @@
 import { HTMLMotionProps, motion } from "framer-motion";
-import "./input.css";
 import React from "react";
 import { InputProps } from "./type";
+
+import "./input.css";
 
 export default function Input({
   stateTools,
@@ -18,8 +19,8 @@ export default function Input({
 
   return area ? (
     <motion.textarea
-      value={stateTools?.state}
-      className="input_area"
+      value={stateTools?.state ?? ""}
+      className={`input_area ${props.className}`}
       onChange={(event) => stateTools?.setState(event.target.value)}
       rows={4}
       whileFocus={{ scale: 1.02, border: "2px solid #b6935e" }}
@@ -29,9 +30,9 @@ export default function Input({
     />
   ) : (
     <motion.input
-      className="input_motion"
+      className={`input_motion ${props.className}`}
       type={type}
-      value={stateTools?.state}
+      value={stateTools?.state ?? ""}
       onChange={(event) => stateTools?.setState(event.target.value)}
       whileFocus={{ scale: 1.02, border: "2px solid #b6935e" }}
       transition={{ duration: 0.2 }}

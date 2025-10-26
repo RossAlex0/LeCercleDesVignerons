@@ -2,17 +2,15 @@ import { X, MapPin, Thermometer, Amphora, MountainSnow } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/button";
 import type { WineDomainModalProps } from "./type";
-import { DOC_TARIF } from "@/utils/globals-variable";
 
 import "./wine-modal.css";
+import { useRouter } from "next/navigation";
 
 export default function WineModal({ domain, onClose }: WineDomainModalProps) {
+  const router = useRouter();
+
   const handleClickButtonPrices = () => {
-    const fileUrl = window.location.origin + DOC_TARIF;
-    window.open(
-      "https://view.officeapps.live.com/op/embed.aspx?src=" + fileUrl,
-      "_blank"
-    );
+    router.push("/catalog");
   };
 
   return (
@@ -100,7 +98,7 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
                 </div>
                 <div className="wine_modal_button flex_row_center">
                   <Button onClick={handleClickButtonPrices}>
-                    Grille Tarifaire
+                    Voir les vins
                   </Button>
                 </div>
               </div>

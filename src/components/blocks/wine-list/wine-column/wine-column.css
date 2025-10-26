@@ -1,0 +1,38 @@
+.column_value {
+  padding-inline: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #e6e4da;
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+}
+
+.column_value > p {
+  font-family: var(--font-noto);
+}
+
+.pills_millesime {
+  border: 1px solid #e3d1c6;
+  background-color: #faf5eb;
+  padding: 0.15rem 0.5rem;
+  border-radius: 16px;
+}
+
+.value_Produit,
+.value_Prix_unitaire,
+.value_Valeur_totale {
+  color: var(--primary-color);
+  font-weight: 550;
+}
+.value_Millésime,
+.value_Stock {
+  color: #854938;
+  font-weight: 250;
+  font-size: 0.9rem;
+}
+.value_Origine,
+.value_Volume,
+.value_CBO {
+  color: #9d897b;
+  font-weight: 300;
+}

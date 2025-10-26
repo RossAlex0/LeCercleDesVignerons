@@ -1,15 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import Button from "@/components/ui/button";
 import ArrowDown from "@/components/ui/arrow-down";
 import ModalContact from "../contact-modal";
 import React from "react";
 import useWindowSize from "@/utils/custom-hook/useWindowWidth";
-import { DOC_TARIF } from "@/utils/globals-variable";
+import { useRouter } from "next/navigation";
 
 import "./hero.css";
 
 export default function Hero() {
   const { width } = useWindowSize();
+
+  const router = useRouter();
 
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -26,11 +30,7 @@ export default function Hero() {
   );
 
   const handleClickButtonPrices = () => {
-    const fileUrl = window.location.origin + DOC_TARIF;
-    window.open(
-      "https://view.officeapps.live.com/op/embed.aspx?src=" + fileUrl,
-      "_blank"
-    );
+    router.push("/catalog");
   };
 
   return (
@@ -49,7 +49,7 @@ export default function Hero() {
           et la richesse des grands vins.
         </h2>
         <div className="home_button">
-          <Button onClick={handleClickButtonPrices}>Grille Tarifaire</Button>
+          <Button onClick={handleClickButtonPrices}>Tous les vins</Button>
           <Button
             style={{
               backgroundColor: "transparent",

@@ -4,7 +4,10 @@ export type InputProps = (
   | HTMLMotionProps<"input">
   | HTMLMotionProps<"textarea">
 ) & {
-  stateTools?: { state: string; setState: (state: string) => void };
+  stateTools?: {
+    state: string | null;
+    setState: (state: string | null) => void;
+  };
   area?: boolean;
   half?: boolean;
   type?: React.HTMLInputTypeAttribute;

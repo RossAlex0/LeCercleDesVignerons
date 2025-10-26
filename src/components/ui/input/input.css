@@ -1,7 +1,7 @@
 .input_motion {
   padding: 10px 15px;
   border: 1px solid var(--black-color);
-  border-radius: 8px;
+  border-radius: 12px;
   outline: none;
   font-size: 1rem;
   height: 2.5em;
@@ -9,11 +9,21 @@
 
 .input_area {
   padding: 10px 15px;
-  border-radius: 8px;
+  border-radius: 12px;
   outline: none;
   font-size: 1rem;
   border: 1px solid var(--black-color);
   resize: none;
   line-height: 1.5;
   height: 6em;
+}
+
+.input_motion::-webkit-outer-spin-button,
+.input_motion::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+.input_motion[type="number"] {
+  -moz-appearance: textfield;
 }

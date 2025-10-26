@@ -1,0 +1,68 @@
+.catalog_container {
+  height: 100lvh;
+  padding: 2rem;
+  gap: 2rem;
+  overflow: -moz-hidden-unscrollable;
+}
+
+.catalog_header {
+  position: relative;
+  width: 100%;
+}
+
+.catalog_title {
+  font-family: var(--font-noto);
+  color: var(--white-color);
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.list_header {
+  gap: 1rem;
+}
+/* INPUT */
+
+.list_input {
+  gap: 2rem;
+  align-items: center;
+}
+
+.list_input > div:nth-child(1) {
+  min-width: 25%;
+}
+
+/* CATALOG */
+
+.list_tab {
+  flex: 1;
+  background-color: var(--white-color);
+  border: 1px solid #e6e4da;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* COLUMN WIDTH */
+
+.width_CBO {
+  width: 8%;
+}
+.width_Produit {
+  width: 24%;
+}
+.width_Millésime {
+  width: 10%;
+}
+.width_Origine {
+  width: 10%;
+}
+.width_Volume {
+  width: 14%;
+}
+.width_Prix_unitaire {
+  width: 12%;
+}
+.width_Stock {
+  width: 10%;
+}
+.width_Valeur_totale {
+  width: 12%;
+}
