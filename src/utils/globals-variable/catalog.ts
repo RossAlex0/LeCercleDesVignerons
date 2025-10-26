@@ -4,7 +4,7 @@ export const headersCatalog = [
   "Millésime",
   "Origine",
   "Volume",
-  "Prix unitaire",
+  "Prix unitaire (HT)",
   "Stock",
   "Valeur totale",
 ];
