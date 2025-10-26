@@ -6,7 +6,7 @@ import WineList from "@/components/blocks/wine-list";
 import Input from "@/components/ui/input";
 import { useGetWinePrices } from "@/utils/custom-hook/useGetWinePrices";
 import { CirclePlus, Download, RotateCcw, Search, Wine } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { headersCatalog } from "@/utils/globals-variable/catalog";
 import Loading from "../loading";
 import FilterModal from "@/components/layouts/filter-modal";
@@ -17,6 +17,8 @@ import { FormValues } from "./type";
 
 export default function CatalogWine() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const region = searchParams.get("region");
 
   const { isLoad, getData, filterData, downloadWineDocs } = useGetWinePrices();
   const [open, setOpen] = React.useState<boolean>(false);
@@ -25,7 +27,7 @@ export default function CatalogWine() {
     WineData[] | undefined
   >();
   const [productValues, setProductValues] = React.useState<FormValues>({
-    region: null,
+    region: region ?? null,
     price: null,
     millesime: null,
     volume: null,
@@ -37,6 +39,11 @@ export default function CatalogWine() {
     }
   }, [isLoad]);
 
+  React.useEffect(() => {
+    if (region && isLoad) {
+      setDataFiltered(filterData(undefined, productValues));
+    }
+  }, [region, isLoad]);
   // Get values from data to input filter
 
   const millesimes = React.useMemo(

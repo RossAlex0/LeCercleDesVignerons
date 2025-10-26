@@ -24,9 +24,9 @@ export const parseTarifData = (data: string[][]): WineData[] => {
       currentObject.quantity = checkValue(da[1]);
       currentObject.millesime = checkValue(da[2]);
       currentObject.cbo = checkValue(da[3]);
-      currentObject.volume = checkValue(da[4]).split(" ").join("");
-      currentObject.price = checkValue(da[5]);
-      currentObject.origin = checkValue(da[6]);
+      currentObject.volume = checkValue(da[5]).split(" ").join("");
+      currentObject.price = checkValue(da[6]);
+      currentObject.origin = checkValue(da[7]);
 
       dataParsed.push(currentObject);
     }

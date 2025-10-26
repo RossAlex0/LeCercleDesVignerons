@@ -63,7 +63,7 @@ export default function FooterContact() {
       </div>
       <p className="footer_disclaimer">Tous droits réservés.</p>
       <div className="footer_disclaimer flex_row_center_center">
-        <p>Site web réaliser par Rossignol Alex -</p>{" "}
+        <p>Site web réalisé par Rossignol Alex -</p>{" "}
         <a
           href="https://alex-rossignol.fr"
           target="_blank"

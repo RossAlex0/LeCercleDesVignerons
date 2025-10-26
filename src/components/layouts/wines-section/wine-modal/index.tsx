@@ -10,7 +10,11 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
   const router = useRouter();
 
   const handleClickButtonPrices = () => {
-    router.push("/catalog");
+    if (domain.name === "Bordeaux") {
+      router.push("/catalog?region=bordeaux");
+    } else {
+      router.push("/catalog");
+    }
   };
 
   return (

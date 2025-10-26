@@ -68,7 +68,9 @@ export function useGetWinePrices() {
       }
 
       if (region)
-        dataParsed = dataParsed.filter((wine) => wine.origin === region);
+        dataParsed = dataParsed.filter(
+          (wine) => wine.origin.toLowerCase() === region.toLowerCase()
+        );
 
       if (volume)
         dataParsed = dataParsed.filter((wine) => wine.volume === volume);
