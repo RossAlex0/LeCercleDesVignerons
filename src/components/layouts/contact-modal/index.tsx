@@ -95,7 +95,8 @@ export default function ModalContact({ onClose }: { onClose: () => void }) {
               <Input
                 stateTools={{
                   state: form.name,
-                  setState: (value) => setForm({ ...form, name: value }),
+                  setState: (value) =>
+                    setForm({ ...form, name: value as string }),
                 }}
                 half
                 placeholder="Nom / Prénom"
@@ -103,7 +104,8 @@ export default function ModalContact({ onClose }: { onClose: () => void }) {
               <Input
                 stateTools={{
                   state: form.email,
-                  setState: (value) => setForm({ ...form, email: value }),
+                  setState: (value) =>
+                    setForm({ ...form, email: value as string }),
                 }}
                 half
                 placeholder="Mail"
@@ -112,14 +114,16 @@ export default function ModalContact({ onClose }: { onClose: () => void }) {
             <Input
               stateTools={{
                 state: form.subject,
-                setState: (value) => setForm({ ...form, subject: value }),
+                setState: (value) =>
+                  setForm({ ...form, subject: value as string }),
               }}
               placeholder="Objet"
             />
             <Input
               stateTools={{
                 state: form.message,
-                setState: (value) => setForm({ ...form, message: value }),
+                setState: (value) =>
+                  setForm({ ...form, message: value as string }),
               }}
               area
               placeholder="Message"
