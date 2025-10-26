@@ -10,10 +10,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { headersCatalog } from "@/utils/globals-variable/catalog";
 import Loading from "../loading";
 import FilterModal from "@/components/layouts/filter-modal";
-
-import "./catalog.css";
 import { WineData } from "@/utils/custom-hook/useGetWinePrices/type";
 import { FormValues } from "./type";
+
+import "./catalog.css";
+import { sortWineByName } from "@/utils/data/sort";
 
 export default function CatalogWine() {
   const router = useRouter();
@@ -195,7 +196,13 @@ export default function CatalogWine() {
           ))}
         </div>
         <div className="flex_row" style={{ overflow: "scroll" }}>
-          <WineList wines={dataFiltered ?? wineData} />
+          <WineList
+            wines={
+              dataFiltered
+                ? sortWineByName(dataFiltered)
+                : sortWineByName(wineData)
+            }
+          />
         </div>
       </div>
       {open ? (

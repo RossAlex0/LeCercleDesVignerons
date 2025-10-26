@@ -8,3 +8,5 @@ export const headersCatalog = [
   "Stock",
   "Valeur totale",
 ];
+
+export const LOCAL_DATA_CERCLE_VIGNERONS = "localDataCercleVignerons";
