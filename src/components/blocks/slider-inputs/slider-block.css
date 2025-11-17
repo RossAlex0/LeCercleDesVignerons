@@ -1,24 +1,24 @@
 /* rc-slider classes – use !important to override the default styles */
-.css-1asissc-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
+.MuiSlider-valueLabel {
   background-color: var(--white-color) !important;
   border-radius: 16px !important;
   color: var(--or-color) !important;
 }
 
-.css-1xcmt9q-MuiSlider-thumb {
+.MuiSlider-thumb {
   color: var(--white-color) !important;
 }
-.css-1xcmt9q-MuiSlider-thumb:hover {
+.MuiSlider-thumb:hover {
   box-shadow: 0px 0px 0px 8px #8549382e !important;
 }
-.css-1xcmt9q-MuiSlider-thumb.Mui-active {
+.MuiSlider-thumb.Mui-active {
   box-shadow: 0px 0px 0px 14px #8549382e !important;
 }
-.css-1xcmt9q-MuiSlider-thumb.Mui-active:hover {
+.MuiSlider-thumb.Mui-active:hover {
   box-shadow: 0px 0px 0px 14px #8549382e !important;
 }
 
-.css-xvk2i-MuiSlider-track {
+.MuiSlider-track {
   color: var(--or-color) !important;
 }
 

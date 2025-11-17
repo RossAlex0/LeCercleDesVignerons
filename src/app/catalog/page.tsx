@@ -14,7 +14,6 @@ import { WineData } from "@/utils/custom-hook/useGetWinePrices/type";
 import { FormValues } from "./type";
 
 import "./catalog.css";
-import { sortWineByName } from "@/utils/data/sort";
 
 export default function CatalogWine() {
   const router = useRouter();
@@ -127,8 +126,8 @@ export default function CatalogWine() {
     });
     setDataFiltered(wineData);
   };
-  // Styles
 
+  // Styles
   const buttonStyle = {
     padding: "0.5rem 0.5rem",
     display: "flex",
@@ -197,11 +196,7 @@ export default function CatalogWine() {
         </div>
         <div className="flex_row" style={{ overflow: "scroll" }}>
           <WineList
-            wines={
-              dataFiltered
-                ? sortWineByName(dataFiltered)
-                : sortWineByName(wineData)
-            }
+            wines={dataFiltered ? dataFiltered : wineData ? wineData : []}
           />
         </div>
       </div>
