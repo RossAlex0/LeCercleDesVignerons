@@ -21,6 +21,8 @@ export default function WineModal({ domain, onClose }: WineDomainModalProps) {
     }
     if (domain.name === "Bordeaux") {
       router.push("/catalog?region=bordeaux");
+    } else if (domain.name.includes("Bourgogne")) {
+      router.push("/catalog?region=bourgogne");
     } else {
       router.push("/catalog");
     }

@@ -2,33 +2,35 @@
 
 import { WineData } from "./type";
 
-export const parseTarifData = (data: string[][]): WineData[] => {
-  const b = data[0].length;
+export const parseTarifData = (WineData: string[][]): WineData[] => {
+  const b = WineData[0].length;
 
   const dataParsed: WineData[] = [];
 
   let objectModel: WineData | object = {};
 
   for (let a = 0; a <= b; a++) {
-    const fieldName = data[0][a];
+    const fieldName = WineData[0][a];
 
     if (!fieldName) continue;
 
     objectModel = { ...objectModel, [fieldName]: "" };
   }
-  data.forEach((da, index) => {
+  WineData.forEach((wine, index) => {
     if (index !== 0) {
       const currentObject = { ...objectModel } as WineData;
 
-      currentObject.product_name = checkValue(da[0]);
-      currentObject.quantity = checkValue(da[1]);
-      currentObject.millesime = checkValue(da[2]);
-      currentObject.cbo = checkValue(da[3]);
-      currentObject.volume = checkValue(da[5]).split(" ").join("");
-      currentObject.price = checkValue(da[6]);
-      currentObject.origin = checkValue(da[7]);
+      currentObject.product_name = checkValue(wine[0]);
+      currentObject.quantity = checkValue(wine[1]);
+      currentObject.millesime = checkValue(wine[2]);
+      currentObject.cbo = checkValue(wine[3]);
+      currentObject.volume = checkValue(wine[5]).split(" ").join("");
+      currentObject.price = checkValue(wine[6]);
+      currentObject.origin = checkValue(wine[7]);
 
-      dataParsed.push(currentObject);
+      if (currentObject.product_name !== "-") {
+        dataParsed.push(currentObject);
+      }
     }
   });
 

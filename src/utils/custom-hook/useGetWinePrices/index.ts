@@ -14,7 +14,7 @@ export function useGetWinePrices() {
   const [isLoad, setIsLoad] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    const savedData = localStorage.getItem(LOCAL_DATA_CERCLE_VIGNERONS);
+    const savedData = sessionStorage.getItem(LOCAL_DATA_CERCLE_VIGNERONS);
     if (savedData) {
       setWinePrice(JSON.parse(savedData));
       setIsLoad(true);
@@ -26,8 +26,10 @@ export function useGetWinePrices() {
     )
       .then((res) => res.json())
       .then((data) => {
+        console.info("SOURCE/", data);
+
         setWinePrice(data.values);
-        localStorage.setItem(
+        sessionStorage.setItem(
           LOCAL_DATA_CERCLE_VIGNERONS,
           JSON.stringify(data.values)
         );
@@ -36,7 +38,7 @@ export function useGetWinePrices() {
       .catch((err) => console.error(err));
   }, []);
 
-  const getData = (): WineData[] | [] => {
+  const getData = (): WineData[] => {
     if (winePrice) {
       const dataParsed = parseTarifData(winePrice);
       return dataParsed;
@@ -80,8 +82,8 @@ export function useGetWinePrices() {
       }
 
       if (region)
-        dataParsed = dataParsed.filter(
-          (wine) => wine.origin.toLowerCase() === region.toLowerCase()
+        dataParsed = dataParsed.filter((wine) =>
+          wine.origin.toLowerCase().includes(region.toLowerCase())
         );
 
       if (volume)
