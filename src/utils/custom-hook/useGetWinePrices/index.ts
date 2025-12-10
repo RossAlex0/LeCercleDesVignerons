@@ -26,8 +26,6 @@ export function useGetWinePrices() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.info("SOURCE/", data);
-
         setWinePrice(data.values);
         sessionStorage.setItem(
           LOCAL_DATA_CERCLE_VIGNERONS,
