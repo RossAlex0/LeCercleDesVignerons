@@ -55,10 +55,13 @@ export default function FilterModal({
               id="origine-select"
               value={values.region ?? ""}
               onChange={(e) =>
-                setter((prev) => ({ ...prev, region: e.target.value }))
+                setter((prev) => ({
+                  ...prev,
+                  region: e.target.value,
+                }))
               }
               className="select_filter"
-              disabled={!!(origines && origines.length > 0)}
+              disabled={!(origines && origines.length > 0)}
             >
               <option value="">Choix de région</option>
               {origines?.map((origine) => (
